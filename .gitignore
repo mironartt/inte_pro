@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+inte_pro/local_settings.py
+notes.txt

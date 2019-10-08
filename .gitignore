@@ -106,3 +106,6 @@ venv.bak/
 
 inte_pro/local_settings.py
 notes.txt
+test.py
+deployment/
+static/

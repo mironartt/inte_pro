@@ -1,0 +1,180 @@
+
+    /* region start background */
+    .bg-block {
+        width: 725px;
+        height: 478px;
+    }
+
+/*
+      @media screen and (max-width: 1100px) {
+        .bg-block {
+            width: 400px;
+            height: 200px;
+        }
+    }
+*/
+
+
+    .block-bg1 {
+        background: url(../images/figma/bg1.png) no-repeat;
+        background-size: cover;
+        padding: 0;
+        opacity:1;
+
+
+    }
+    .block-bg1:hover {
+        opacity:0.6;
+    }
+
+
+    .block-bg2 {
+        background: url(../images/figma/bg2.png) no-repeat;
+        background-size: cover;
+        padding: 0;
+        opacity:1;
+    }
+    .block-bg2:hover {
+        opacity:0.6;
+    }
+
+
+    .block-bg3 {
+        background: url(../images/figma/bg3.png) no-repeat;
+        background-size: cover;
+        padding: 0;
+        opacity:1;
+    }
+    .block-bg3:hover {
+        opacity:0.6;
+    }
+
+
+    .block-bg4 {
+        background: url(../images/figma/bg4.png) no-repeat;
+        background-size: cover;
+        padding: 0;
+        opacity:1;
+    }
+    .block-bg4:hover {
+        opacity:0.6;
+    }
+
+    /* end region */
+
+    .ver-hor-center {
+        position:absolute;
+        left:60%;
+        top:60%;
+        margin:-100px 0 0 -150px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .ver-hor-center {
+            position: absolute;
+            left: 20%;
+            top: 60%;
+            margin: -100px 0 0 -150px;
+        }
+    }
+    .nav_1{
+        position: absolute;
+        z-index: 8;
+        width: 100%;
+    }
+    @media screen and (max-width: 1100px) {
+        .nav_1 {
+        position: relative;
+        width: 101.5%;
+        /*height: 66px;*/
+        background-color: #242727;
+        }
+    }
+    .nav_icon_1 {
+    width: 50%;
+    padding: 20px;
+
+    }
+    .bg-cont-bl1{
+        margin-left: -30%;
+
+    }
+
+    .bg-cont-bl2{
+        margin-left: -30%;
+
+    }
+    .bg-cont-bl3{
+        margin-left: -30%;
+
+    }
+        .bg-cont-bl4{
+        margin-left: -18%;
+
+    }
+    @media screen and (max-width: 1100px) {
+        .bg-cont-bl1 {
+        margin-left: 0%;
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        .bg-cont-bl2 {
+            margin-left: 0%;
+        }
+    }
+        @media screen and (max-width: 1100px) {
+        .bg-cont-bl3 {
+        margin-left: 0%;
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        .bg-cont-bl4 {
+        margin-left: 0%;
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        .post-item {
+        width: 100%;
+        height: 100%;
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        .icon_1 {
+        width: 85px;
+        height: 85px;
+        margin-top: -40px;
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        .vec_1 {
+        width: 22.5px;
+        height: 45px;
+        margin-top: 40px;
+        }
+    }
+    .text-muted{
+        position: absolute;
+        bottom: 2%;
+        width: 100%;
+        margin-left: -18%;
+    }
+    @media screen and (max-width: 1100px) {
+        .text-muted {
+        position: relative;
+        bottom: 0;
+        width: 121.9%;
+        height: 120px;
+        background-color: #242727;
+        font-size: 30%;
+        }
+    }
+    .txt-all{
+        color: white;
+        font-size: 65px;
+    }
+    .txt-all:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+

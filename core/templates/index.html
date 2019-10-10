@@ -1,135 +1,234 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extrastyle %}
+    <style>
+    .row-1 {
+        display: inline-block;
+        vertical-align: middle;
+
+        margin: 0;
+        padding: 0;
+        margin-left: -.36rem;
+        {#padding-left: 3px;#}
+        {#display: flex;#}
+
+    }
+
+    .base-block {
+        width: 50vw;
+        height: 50vh;
+        margin: 0;
+        padding: 0;
+
+    }
+    #base-block-1 {
+        background: url({% static 'images/figma/bg1.png' %}) no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        background-position: center;
+    }
+    #base-block-2 {
+        background: url({% static 'images/figma/bg2.png' %}) no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        background-position: center;
+    }
+    #base-block-3 {
+        background: url({% static 'images/figma/bg3.png' %}) no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        background-position: center;
+    }
+    #base-block-4 {
+        background: url({% static 'images/figma/bg4.png' %}) no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        background-position: center;
+    }
+    .block-content {
+        width: 100%;
+        height: 100%;
+        {#padding: 7px;#}
+        position: absolute;
+
+    }
+    #block-content-1 {
+        {#opacity: 20%;#}
+        background: url({% static 'images/figma/fon.png' %}) no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+    }
+    .center-content{
+        background-color: #5E5694;
+        width: 20%;
+        height: 20%;
+        position: absolute;
+        {#margin-top: 12.5%;#}
+        {#left: 25%;#}
+
+        left: 25%;
+        top: 25%;
+        margin-left: -10%;
+        margin-top: -5%;
+        {#margin-right: 50%;#}
+        {#margin-left: 10%;#}
+
+    }
+    .test-center{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -25%;
+        {#margin-top: -5%;#}
+    }
+    .image-fon-1{
+        width: 50vw;
+        height: 50vh;
+        margin: 0;
+        padding: 0;
+        background: url({% static 'images/figma/fon1.png' %}) no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        background-position: center;
+    }
+    .image-fon-3{
+        width: 50vw;
+        height: 50vh;
+        margin: 0;
+        padding: 0;
+        background: url({% static 'images/figma/fon1.png' %}) no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        background-position: center;
+    }
+    .image-fon-4{
+        width: 50vw;
+        height: 50vh;
+        margin: 0;
+        padding: 0;
+        background: url({% static 'images/figma/fon1.png' %}) no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        background-position: center;
+    }
+    .image-fon-5{
+        width: 50vw;
+        height: 50vh;
+        margin: 0;
+        padding: 0;
+        background: url({% static 'images/figma/fon1.png' %}) no-repeat;
+        background-size: cover;
+        -moz-background-size: cover;
+        background-position: center;
+    }
+    .my-nav {
+        position: absolute;
+        color: white;
+        width: 100vw;
+        height: 10vh;
+    }
+    .my-nav div {
+        width: 20%;
+        height: 10vh;
+        display: inline-block;
+    }
+    .my-nav div#label {
+        float:left;
+    }
+    .my-nav div#phone {
+        float:right;
+        padding-right: 2vw;
+    }
+    .my-nav div img {
+        position: relative;
+        padding-top: 2vh;
+        width: 80%;
+        height: 80%;
+        {#background-color: #5E5694;#}
+    }
+    .my-nav div img#label {
+        padding-left: 2vw;
+        min-width: 250px;
+        max-width: 300px;
+        max-height: 100px;
+        left: 0;
+    }
+    .my-nav div img#phone {
+        padding-right: 2vw;
+        min-width: 250px;
+        max-height: 100px;
+    }
+    </style>
+
+{% endblock %}
 {% block content %}
-
-	<nav class="nav_1">
-    <div class="row" style="width: 100%">
-
-        <div class="nav_icon_1">
-            <div align="left" class="nav_icon_2">
-                <img class="post-item" src="{% static 'images/figma/label.png' %}" style="">
-            </div>
+    <div class="my-nav">
+        <div id="label">
+            <img id="label" src="{% static 'images/figma/label.png' %}">
         </div>
-        <div class="nav_icon_1">
-            <div align="right">
-                <img src="{% static 'images/figma/telefon.png' %}" class="post-item">
-            </div>
+        <div id="phone" align="right">
+            <img id="phone" src="{% static 'images/figma/telefon.png' %}">
         </div>
+
     </div>
-</nav>
 
-<div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-6 block-bg1" >
-                    <div class="bg-block">
-                        <!-- Content -->
-                        <div class="ver-hor-center">
-                            <div class="row " style="text-align: center">
-                                <div class="col-lg-12">
-                                    <div style=" display: inline-block">
-                                        <img src="{% static 'images/figma/projects.png' %}" class="icon_1">
-                                    </div>
-                                    <div style="color: white; font-size: 65px"  class="d-none d-md-inline-block d-sm-inline-block d-lg-block" >
-                                        Проекты
-                                    </div>
-                                </div>
-                            </div>
+    <div class="row-1">
+        <div class="base-block" id="base-block-1">
+            <div class="image-fon-1">
+                <div class="block-content">
+    {#                <img src="{% static 'images/figma/fon.png' %}" class="image-fon">#}
+                    <div class="center-content" >
+                        <div class="test-center">d
+                            dd
+                            d  dddddddddddddddddddвd
                         </div>
-                    </div>
-                    <!-- Vector on mobile  -->
-                    <div style="display: inline-block;" class="d-none d-md-block d-sm-block d-lg-none">
-                         <div class="ver-hor-center" style="left: 99%;">
-                             <img src="{% static 'images/figma/vector.png' %}" class="vec_1">
-                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 block-bg2">
-                    <div class="bg-block" style="display: inline-block;">
-
-                        <!-- Content -->
-                         <div class="ver-hor-center">
-                            <div class="row " style="text-align: center">
-                                <div class="col-lg-12">
-                                    <div style=" display: inline-block">
-                                        <img src="{% static 'images/figma/cloud.png' %}" class="icon_1">
-                                    </div>
-                                    <div style="color: white;font-size: 65px" class="d-none d-md-inline-block d-sm-inline-block d-lg-block" >
-                                        Облачное хранилище
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Vector on mobile  -->
-                    <div style="display: inline-block;" class="d-none d-md-block d-sm-block d-lg-none">
-                         <div class="ver-hor-center" style="left: 99%;">
-                             <img src="{% static 'images/figma/vector.png' %}" class="vec_1">
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-6 block-bg3">
-                    <div class="bg-block">
-                        <!-- Content -->
-                         <div class="ver-hor-center">
-                            <div class="row " style="text-align: center">
-                                <div class="col-lg-12">
-                                    <div style=" display: inline-block">
-                                        <img src="{% static 'images/figma/mail.png' %}" class="icon_1">
-                                    </div>
-                                    <div style="color: white; font-size: 65px;" class="d-none d-md-inline-block d-sm-inline-block d-lg-block" >
-                                        Контакты
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Vector on mobile  -->
-                    <div style="display: inline-block;" class="d-none d-md-block d-sm-block d-lg-none">
-                         <div class="ver-hor-center" style="left: 99%;">
-                             <img src="{% static 'images/figma/vector.png' %}" class="vec_1">
-                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 block-bg4">
-                    <div class="bg-block">
-
-                        <!-- Content -->
-                         <div class="ver-hor-center">
-                            <div class="row " style="text-align: center">
-                                <div class="col-lg-12">
-                                    <div style=" display: inline-block">
-                                        <img src="{% static 'images/figma/reck.png' %}" class="icon_1">
-                                    </div>
-                                    <div style="color: white; font-size: 65px" class="d-none d-md-inline-block d-sm-inline-block d-lg-block" >
-                                        Реквизиты
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Vector on mobile  -->
-                    <div style="display: inline-block;" class="d-none d-md-block d-sm-block d-lg-none">
-                         <div class="ver-hor-center" style="left: 99%;">
-                             <img src="{% static 'images/figma/vector.png' %}" class="vec_1">
-                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
- </div>
+    <div class="row-1">
+        <div class="base-block" id="base-block-2">
+            <div class="image-fon-2">
+                <div class="block-content">
+                    <div class="center-content">
+                        dsfsdfdsd2ddd
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-1">
+        <div class="base-block" id="base-block-3" >
+            <div class="image-fon-3">
+                <div class="block-content">
+                    <div class="center-content">
+                        dsfsdfsd3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-1">
+        <div class="base-block" id="base-block-4" >
+            <div class="image-fon-4">
+                <div class="block-content" >
+                    <div class="center-content">
+                        dfsdfsdf4
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 
 {% endblock %}

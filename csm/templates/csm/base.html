@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inter.Pro - admin</title>
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/login.css' %}">
+
+
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/home_p.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icofont/icofont.min.css' %}">
+
+
+    <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+
+{% if not user.is_authenticated %}
+    {% include 'authoricated.html' %}
+{% else %}
+    <div style="background-color: #dedede; width: 100%; height: 100%">
+        <div class="container" style="height: 100%; background-color: #cecece">
+            <nav class="navbar navbar-default" style="height: 70px;">
+                <div class="container-fluid">
+                    <div class="navbar-header" style="width: 100%; display: flex; box-sizing: border-box; justify-content: space-between;">
+                        <div style="display: inline-block; position: relative">
+                            <a class="navbar-brand" href="#">
+                                <img alt="Brand" src="{% static 'images/figma/label.png' %}">
+                            </a>
+                        </div>
+                        <div style="display: inline-block; position: relative; vertical-align: top;">
+                            <p style="vertical-align: top"  class="navbar-text navbar-right">Имя Пользователя <a href="#" class="navbar-link">ВЫЙТИ</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endif %}
+
+</body>
+</html>

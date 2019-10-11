@@ -10,4 +10,4 @@ class IndexView(generic.View):
             'test':'ZAEBUMBA!!!!!!!!!!!!!!!'
         }
 
-        return render(request, 'index.html', context)
+        return render(request, 'core/index.html', context)

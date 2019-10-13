@@ -1,0 +1,83 @@
+{% extends 'csm/base.html' %}
+{% load static %}
+<style>
+
+</style>
+
+{% block content %}
+    <div style="width: 100%; height: 100%;">
+        <h1>Создать новую плитку</h1>
+    </div>
+    <br><br>
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <form action="{% url 'admin_tile_create' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label style="display:block;">
+                    Выбите тип плитки
+                    <select class="custom-select mb-3" name="type" id="tile_type" style="width: 50%; display:block;">
+                        {% for type in types %}
+                            <option value="{{ type.0 }}">{{ type.1 }}</option>
+                        {% endfor %}
+                    </select>
+                    <span>
+                        {{ form.errors.type }}
+                    </span>
+                </label>
+
+                <br>
+
+                <label style="width: 100%; display:block;">
+                    Заголовок плитки (отображается при наведение на нее во всплывающем)
+                    <input type="text" name="title" required id="tile_title" placeholder="Заголовок плитки"
+                           style="width: 50%; display:block;">
+                    <span>
+                        {{ form.errors.title }}
+                    </span>
+                </label>
+
+                <br>
+
+                <label style="width: 50%; display:block;">
+                    Главное изобржажение плитки
+                    <input type="file" name="main_image" required id="tile_main_image"
+                           style="width: 100%; display:block; border-radius: 5px; border: 1px solid #a1a1a1;">
+                    <span>
+                        {{ form.errors.main_image }}
+                    </span>
+                </label>
+
+                <br>
+
+                <label style="width: 100%; display:block;">
+                    Описание плитки (до 130 символов)
+                    {#                    <input type="file" name="main_image" required id="tile_main_image" placeholder="Главное изображение" style="width: 50%; display:block; border-radius: 5px; border: 1px solid #a1a1a1;">#}
+                    <textarea type="text" name="description" id="tile_description"
+                              style="width: 50%; display:block; border-radius: 5px; border: 1px solid #a1a1a1; height: 120px">
+
+                    </textarea>
+                    <span>
+                        {{ form.errors.description }}
+                    </span>
+                </label>
+
+                <br>
+
+                <div class="submit-row">
+                    <label>&nbsp;
+                        <input style="background-color: #1c2f5f" type="submit" value="Сохранить">
+                    </label>
+                </div>
+
+
+            </form>
+
+        </div>
+        {#        <div class="col-lg-12">#}
+        {#            dsfsdf#}
+        {#        </div>#}
+
+    </div>
+{% endblock %}

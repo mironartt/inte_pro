@@ -10,6 +10,12 @@
 	<link rel="stylesheet" href="{% static 'css/home_p.css' %}">
     <link rel="stylesheet" href="{% static 'css/icofont/icofont.min.css' %}">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+
+	<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
     <style>
             .bg-block {
         width: 50vw;
@@ -112,9 +118,7 @@
         /*font-size: 65px;*/
     }
     .txt-all:hover {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
+        {#-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);#}
     }
 
 html, body {
@@ -130,13 +134,28 @@ html, body {
 </head>
 <body>
 
-    <div>
-        {% block content %}
-        {% endblock %}
-    </div>
+	<nav class="nav_1" >
+		<div class="row" style="width: 100%">
+
+			<div class="nav_icon_1">
+				<div align="left" class="nav_icon_2">
+					<img class="post-item" src="{% static 'images/figma/label.png' %}" style="">
+				</div>
+			</div>
+			<div class="nav_icon_1">
+				<div align="right">
+{#					<img src="{% static 'images/figma/telefon.png' %}" class="post-item">#}
+					<h2><a href="tel:+7(495)188-98-32" style="color: white">+7(495)188-98-32</a></h2>
+					<h4><a href="mailto:vlad@htmlbook.ru" style="color: white">mail.@inte.pro</a></h4>
+				</div>
+			</div>
+		</div>
+	</nav>
+	{% block content %}
+	{% endblock %}
+	<footer class="text-muted">
+		<h6><span>® INTE.PRO 2019</span>&nbsp;&nbsp;&nbsp;<span>Лицензия</span>&nbsp;&nbsp;&nbsp;<span>Политика конфедиdциальности</span></h6>
+	</footer>
 
 </body>
-<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
-<script src="{% static 'js/popper.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
 </html>

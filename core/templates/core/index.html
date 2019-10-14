@@ -3,37 +3,20 @@
 
 {% block content %}
 
-
-<nav class="nav_1" >
-    <div class="row" style="width: 100%">
-
-        <div class="nav_icon_1">
-            <div align="left" class="nav_icon_2">
-                <img class="post-item" src="{% static 'images/figma/label.png' %}" style="">
-            </div>
-        </div>
-        <div class="nav_icon_1">
-            <div align="right">
-                <img src="{% static 'images/figma/telefon.png' %}" class="post-item">
-            </div>
-        </div>
-    </div>
-</nav>
-
 <div>
     <div class="row">
         <div class="col-lg-12">
             <div class="row">
-                <div class="col-lg-6 block-bg1">
+                <div class="col-lg-6 block-bg1" id="tile_card" data-id="1">
                     <div class="bg-block">
 {#                        <div class="ver-hor-center" data-toggle="modal" data-target="#project_modal">#}
-                        <div class="ver-hor-center" data-toggle="modal" data-target="#contacts_modal">
+                        <div class="ver-hor-center" id="1" data-toggle="modal" data-target="#contacts_modal">
                             <div class="row " style="text-align: center; padding-top: 70px;">
                                 <div class="col-lg-12 bg-cont-bl1">
                                     <div >
                                         <img src="{% static 'images/figma/projects.png' %}" class="icon_1">
                                     </div>
-                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all"  >
+                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" id="1">
                                         <h2>Проекты</h2>
                                     </div>
                                 </div>
@@ -41,18 +24,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 block-bg2">
+                <div class="col-lg-6 block-bg2" id="tile_card" data-id="2">
                     <div class="bg-block">
 
                         <!-- Content -->
 {#                         <div class="ver-hor-center" data-toggle="modal" data-target="#window_modal_storage">#}
-                         <div class="ver-hor-center" data-toggle="modal" data-target="#contacts_modal">
+                         <div class="ver-hor-center" id="2"  data-toggle="modal" data-target="#contacts_modal">
                             <div class="row " style="text-align: center; padding-top: 70px;">
                                 <div class="col-lg-12 bg-cont-bl4">
                                     <div>
                                         <img src="{% static 'images/figma/cloud.png' %}" class="icon_1">
                                     </div>
-                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" >
+                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" id="2"  >
                                         <h2>Облачное хранилище</h2>
                                     </div>
                                 </div>
@@ -65,17 +48,17 @@
 
         <div class="col-lg-12">
             <div class="row">
-                <div class="col-lg-6 block-bg3">
+                <div class="col-lg-6 block-bg3" id="tile_card" data-id="3">
                     <div class="bg-block">
 
                         <!-- Content -->
-                         <div class="ver-hor-center" data-toggle="modal" data-target="#contacts_modal">
+                         <div class="ver-hor-center" id="3"  data-toggle="modal" data-target="#contacts_modal">
                             <div class="row " style="text-align: center; padding-top: 70px;">
                                 <div class="col-lg-12 bg-cont-bl3">
                                     <div style=" display: inline-block">
                                         <img src="{% static 'images/figma/mail.png' %}" class="icon_1">
                                     </div>
-                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" >
+                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" id="3"  >
                                         <h2>Контакты</h2>
                                     </div>
                                 </div>
@@ -83,22 +66,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 block-bg4">
+                <div class="col-lg-6 block-bg4" id="tile_card" data-id="4">
                     <div class="bg-block">
-{#                         <div class="ver-hor-center" data-toggle="modal" data-target="#requisites_modal">#}
-                         <div class="ver-hor-center" data-toggle="modal" data-target="#contacts_modal">
+                         <div class="ver-hor-center" id="4"  data-toggle="modal" data-target="#contacts_modal">
                             <div class="row " style="text-align: center; padding-top: 70px;">
                                 <div class="col-lg-12 bg-cont-bl4">
                                     <div>
                                         <img src="{% static 'images/figma/reck.png' %}" class="icon_1">
                                     </div>
-                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" >
+                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" id="4">
                                         <h2>Реквизиты</h2>
 {#                                            <div style="width: 150%; margin-left: -25%; color: white;">#}
 {#                                                <h3 align="center">Проектная документация</h3>#}
 {#                                                <p align="center">Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений</p>#}
 {#                                            </div>#}
-
                                     </div>
 {#                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block" >#}
 {#                                        <div style="width: 150%; margin-left: -25%; color: white; position: absolute">#}
@@ -117,9 +98,18 @@
     </div>
  </div>
 
-<footer class="text-muted">
-    <h6><span>® INTE.PRO 2019</span>&nbsp;&nbsp;&nbsp;<span>Лицензия</span>&nbsp;&nbsp;&nbsp;<span>Политика конфедиdциальности</span></h6>
-</footer>
+<script>
+	$(document).ready(function () {
+
+	    $('div#tile_card').hover(function(){
+			$('div.txt-all[id='+$(this).attr('data-id')+']').attr('style', '-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);')
+        },function(){
+			$('div.txt-all[id='+$(this).attr('data-id')+']').attr('style', '-webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1);')
+        });
+
+    })
+
+</script>
 
 {% include 'core/modals/_project.html' %}
 {% include 'core/modals/_storage.html' %}

@@ -1,83 +1,161 @@
 {% load static %}
 <style>
-    body {
-        background-color: #F9F9F9;
+	body {
+		background-color: #F9F9F9;
 
-    }
+	}
 
-    .txt-top {
-        text-align: center;
-        color: black;
-    }
+	.txt-top {
+		text-align: center;
+		color: black;
+	}
 
 
-    .desc_1 {
-        margin-left: 10%;
-    }
+	.desc_1 {
+		margin-left: 10%;
+	}
 
-    .desc_2 {
-        margin-left: 10%;
-    }
+	.desc_2 {
+		margin-left: 10%;
+	}
 </style>
 
-<div class="modal fade" id="contacts_modal" tabindex="-1" role="dialog" aria-labelledby="contacts_modal_label" aria-hidden="true" >
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 300%; margin-left: -100%; height: 85vh; overflow: scroll; transform: scale(0.9)">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <p align="right" aria-hidden="true" style="">&times;</p>
-                </button>
-            <div style="">
-                <h1 align="center">Текущие и реализованные проекты</h1>
-                <p align="center">Таким образом дальнейшее развитие различных форм деятельности в значительной степени</p>
-            </div>
-            <div class="modal-body " style="">
-                <div class="www">
-                    <div class="row featurette" style="margin-top: 7%; margin-bottom: 4%">
-                        <div class="col-lg-7 col-md-12">
-                            <img src="{% static 'images/figma/map3.png' %}" height="490px" width="775px"
-                                 style="margin-left: 7%">
-                        </div>
-                        <div class="col-lg-5 col-md-12">
-                            <div class="desc_1">
-                                <h2>Группа многоквартирных<br> жилыхы домов</h2>
-                                <h3>Адрес</h3><span>Московская область. Раменский район,</span><br>
-                                <span>микрорайон "Новые Островцы", квартал</span><br> "Южный".Корпус 1-5</span>
-                                <h3>Общая площадь</h3>
-                                <span>95700m2</span>
-                                <h3>Состав работ</h3>
-                                <span>Внутренние инженерные системы.Наружные инженерные системы.</span>
-                                <h3>Стадии</h3><span>Проектная и рабочая документация</span>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="flex-lg-shrink-0">
-                    <div class="row featurette" style="margin-top: 4%; margin-bottom: 4%">
-                        <div class="col-lg-5 col-md-12">
-                            <div class="desc_2">
-                                <h2>Группа многоквартирных<br> жилыхы домов</h2>
-                                <h3>Адрес</h3><span>Московская область. Раменский район,</span><br>
-                                <span>микрорайон "Новые Островцы", квартал</span><br> "Южный".Корпус 1-5</span>
-                                <h3>Общая площадь</h3>
-                                <span>95700m2</span>
-                                <h3>Состав работ</h3>
-                                <span>Внутренние инженерные системы.Наружные инженерные системы.</span>
-                                <h3>Стадии</h3><span>Проектная и рабочая документация</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-12">
+<div class="modal fade" id="contacts_modal" tabindex="-1" role="dialog" aria-labelledby="contacts_modal_label" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content" style="width: 300%; margin-left: -100%; height: 97vh; overflow: scroll; transform: scale(0.9); background-color: #d9d9d9">
+			{#			<div>#}
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<p align="right" aria-hidden="true" style="">&times;</p>
+			</button>
+			<div style="">
+				<h1 align="center">Контакты</h1>
+				<p align="center">Таким образом дальнейшее развитие различных форм деятельности в значительной степени</p>
+			</div>
+			<div class="modal-body " style="transform: scale(0.9); margin-top: -40px">
+				<div class="row" style="height: 80vh">
+					<div class="col-lg-7" style="padding: 30px; height: 100%; padding-bottom: 0">
+						<div style="height: 100%; width: 100%; background-color: white; border-radius: 10px">
+							<div class="row" style="height: 100%; width: 100%; padding: 20px; ">
+								<div class="col-lg-12" style="height: 35%; width: 100%; padding: 40px; padding-bottom: 0">
+									<div class="row" style="height: 100%">
+										<div class="col-lg-12">
+											<div>
+												<img src="{% static 'images/figma/phone_icon.png' %}" style="width: 15px; height: 20px; display: inline-block; margin-top: -5px">
+												<h5 style="display: inline-block; margin-left: 15px"><b>Телефон</b></h5>
+											</div>
+											<h5 style="color: #4E4E4E">8(800)000 00 00</h5>
+										</div>
+										<div class="col-lg-12">
+											<div>
+												<img src="{% static 'images/figma/icon_marker_map.png' %}" style="width: 20px; height: 20px; display: inline-block; margin-top: -5px">
+												<h5 style="display: inline-block; margin-left: 15px"><b>Адрес</b></h5>
+											</div>
+											<h5 style="color: #4E4E4E">г. Москва, ул. Пушкина, д.3</h5>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12" style="height: 65%; width: 100%; border: 2px solid #c3c3c3; margin-left: 2%">
+									<img src="{% static 'images/figma/map3.png' %}" width="100%" height="20%">
+								</div>
+							</div>
 
-                            <img src="{% static 'images/figma/map3.png' %}" height="490px" width="775px"
-                                 style="margin-left: 2%">
-                        </div>
-                    </div>
-                    <hr class="featurette-divider">
-                </div>
-            </div>
-{#            <div class="modal-footer">#}
-{#                возможно пригодится и футер#}
-                {#        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
-                {#        <button type="button" class="btn btn-primary">Save changes</button>#}
-{#            </div>#}
-        </div>
-    </div>
+						</div>
+					</div>
+					<div class="col-lg-5" style="padding: 30px; height: 80vh">
+						<div style="height: 130%; width: 100%;">
+							<div class="row" style="height: 85%">
+								<div class="col-lg-12" style="height: 25%;">
+									<div class="row" style="height: 100%">
+										<div class="col-lg-4" style=" width: 100%;">
+											<img src="{% static 'images/figma/qr_code_ex.png' %}" width="130px" height="130px">
+										</div>
+										<div class="col-lg-8" style="height: 65%; width: 100%; padding-right: 15%; padding-top: 25px">
+											<p align="center" style="color: #4E4E4E">Наведите камеру телефона на QR код, чтобы открыть этот сайт на мобильном устройстве</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12" style="height: 100%; margin-top: 50px">
+									<div class="row">
+										<div class="col-lg-12">
+											<h4 align="center">Остались вопросы?</h4>
+										</div>
+										<div class="col-lg-12">
+											<div class="row" style="padding: 20px; padding-left: 0; padding-right: 0">
+												<div class="col-lg-12">
+													<div class="form-group" >
+														<input type="text" class="form-control" name="title" id="create_proj_title" style="width: 100%; border: 1px solid #c6c7c8;" placeholder="Как вас зовут?">
+													</div>
+												</div>
+												<div class="col-lg-12">
+													<div class="form-group" >
+														<input type="text" class="form-control" name="title" id="create_proj_title" style="width: 100%; border: 1px solid #c6c7c8;" placeholder="Ваш телефон">
+													</div>
+												</div>
+												<div class="col-lg-12">
+													<div class="form-group">
+														<input type="text" class="form-control" name="title" id="create_proj_title" style="width: 100%; border: 1px solid #c6c7c8;" placeholder="Ваш email">
+													</div>
+												</div>
+												<div class="col-lg-12">
+													<div class="form-group" >
+														<textarea  class="form-control" name="title" id="create_proj_title" style="width: 100%; border: 1px solid #c6c7c8;" placeholder="Как вас зовут?"></textarea>
+													</div>
+												</div>
+												<div class="col-lg-12">
+													<div class="form-group" >
+														<span class="btn btn-default btn-file" style="width: 15%; display: inline-block">
+															<div align="left">
+																<button type="button"  id="download_image">
+																	<img src="{% static 'images/figma/screpka.svg' %}" width="40px" height="40px">
+																</button><input type="file" name="main_image">
+																<span>{{ form.errors.title }}</span>
+															</div>
+														</span>
+														<button type="button" class="btn btn-primary" style="display: inline-block; width: 80%; height: 50px; margin-left: 10px; display: inline-block; background: #AA9385" id="save_tile_change_down">
+															Отправить
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+{% block extra_style %}
+	<style>
+		.btn-file {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.btn-file input[type=file] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			min-width: 100%;
+			min-height: 100%;
+			font-size: 100px;
+			text-align: right;
+			filter: alpha(opacity=0);
+			opacity: 0;
+			outline: none;
+			background: white;
+			cursor: inherit;
+			display: block;
+		}
+
+		img#up-arrow:hover {
+			background-color: #949287;
+		}
+	</style>
+
+{% endblock %}

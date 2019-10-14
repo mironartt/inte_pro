@@ -1,137 +1,271 @@
 {% extends 'csm/base.html' %}
 {% load static %}
-
+{% load tags %}
 
 {% block content %}
-    <div style="width: 100%; height: 100%">
-        <h1 style="color: black">Оформление плитки Проекты</h1>
-    </div>
-    <br><br>
-    <div class="row">
-        <div class="col-lg-12">
-            {% if messages %}
-                <div class="simplepagecontent">
-                    <div class="form-group feedback">
-                        {% for message in messages %}
-                            <strong style="color: green">{{ message }}</strong>
-                        {% endfor %}
-                    </div>
+
+
+    <div class="container">
+        {% if messages %}
+            <div class="simplepagecontent">
+                <div class="form-group feedback">
+                    {% for message in messages %}
+                        <h4><strong
+                                style="color: {% if message.tags == 'error' %}red{% elif message.tags == 'success' %}green{% endif %}">{{ message }}</strong>
+                        </h4>
+                    {% endfor %}
                 </div>
-            {% endif %}
-            <form action="{% url 'admin_tile_edit' tile.id %}" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <label style="width: 100%; display:block;">
-                    Заголовок плитки (отображается при наведение на нее во всплывающем)
-                    <input type="text" name="title" id="tile_title" placeholder="Заголовок плитки"
-                           style="width: 50%; display:block;" value="{{ tile.title }}">
-                    <span>
-                        {{ form.errors.title }}
-                    </span>
-                </label>
-                <br>
-                <label style="width: 50%; display:block;">
-                    Главное изобржажение плитки
-                    <input type="file" name="main_image" id="tile_main_image"
-                           style="width: 100%; display:block; border-radius: 5px; border: 1px solid #a1a1a1;">
-                    <span>
-                        {{ form.errors.main_image }}
-                    </span>
-                </label>
-                <br>
-                <label style="width: 100%; display:block;">
-                    Описание плитки (до 130 символов)
-                    <textarea type="text" name="description" id="tile_description"
-                              style="width: 50%; display:block; border-radius: 5px; border: 1px solid #a1a1a1; height: 120px">{{ tile.description }}</textarea>
-                    <span>
-                        {{ form.errors.description }}
-                    </span>
-                </label>
-                <label style="width: 100%;">
-                    <input type="checkbox" name="description" id="tile_description"
-                           {% if tile.is_availabled %}checked{% endif %}>
-                    Активна ли плитка
-                </label>
-                <br>
-                <div class="submit-row">
-                    <label>&nbsp;
-                        <input style="background-color: #1c2f5f" type="submit" value="Сохранить">
-                    </label>
-                </div>
-            </form>
+            </div>
+        {% endif %}
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 align="left" style="margin-bottom:10% ;font-size: 50px"><span>Оформление плитки Проекты</span></h2>
+            </div>
         </div>
-    </div>
-
-
-
-
-    <br>
-    <div style="width: 100%; height: 100%">
-        <h3 style="color: black">Проекты</h3>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-lg-12">
-            {% if messages %}
-                <div class="simplepagecontent">
-                    <div class="form-group feedback">
-                        {% for message in messages %}
-                            <strong style="color: green">{{ message }}</strong>
-                        {% endfor %}
+        <form action="{% url 'admin_tile_edit' tile.id %}" method="post" id="save_tile_change" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="submit" hidden id="save_tile_change" />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row" style="height: 50px">
+                                <div class="col-lg-2">
+                                    <h6 align="left" style="white-space: nowrap;">Главное изображение</h6>
+                                </div>
+                                <div class="col-lg-10" style="display: inline-block">
+                                    <div style="margin-left: 20%; display: inline-block; position: absolute; width: 200px; height: 50px">
+                                        <p style="text-align: center; vertical-align: middle; color: #726a5e"
+                                           id="show_file_name">{% if tile.main_image %}<a href="{{ tile.main_image.url }}" target="_blank">{{ tile.main_image|get_main_image }}</a>{% else %}{{ tile.main_image|get_main_image }}{% endif %}</p>
+                                    </div>
+                                    <div style="margin-left: 42%; display: inline-block; position: absolute; bottom: 5px">
+                                        <span class="btn btn-default btn-file">
+                                            <button type="button" class="btn btn-{% if not form.errors.title %}secondary{% else %}danger{% endif %}" id="download_image">Загрузить изображение</button><input
+                                                type="file" name="main_image">
+                                            <span>{{ form.errors.title }}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <p style="font-size: 10px; margin-left: 57%"><span>Файлы .jpeg,.jpg,.png,.pdf</span><br><span>Вес файла до 2,5 Mb</span></p>
                     </div>
                 </div>
-            {% endif %}
+                <div class="col-lg-12">
+                    <p align="left" style=""><span>Заголовок блока</span></p>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group" style="margin-left: 5%">
+                        <input type="text" class="form-control" name="title" id="create_proj_title" style="width: 90%" value="{{ tile.title}}">
+                        <span>{{ form.errors.title }}</span>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <p align="left" style=""><span>Описание блока</span></p>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group" style="margin-left: 5%">
+                        <textarea class="form-control" name="description" id="create_proj_description" rows="5">{{ tile.description }}</textarea>
+                        <span style="font-size: 15px">Ограничение до 130 знаков</span>
+                        <span>{{ form.errors.description }}</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-lg-12">
+                <p align="left" style=""><h2>Проекты</h2></p>
+            </div>
+        </div>
 
 
-            <div class="dropdown" style="width: 100%;">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Right-aligned menu
-  </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <form action="{% url 'admin_tile_edit' tile.id %}" method="post" enctype="multipart/form-data">
+        <div>
+            {% for project in projects %}
+                <div id="project">
+                    <form action="{% url 'admin_project_edit' tile_pk=tile.id project_pk=project.id %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <label style="width: 100%; display:block;">
-                            Заголовок плитки (отображается при наведение на нее во всплывающем)
-                            <input type="text" name="title" id="tile_title" placeholder="Заголовок плитки"
-                                   style="width: 50%; display:block;" value="{{ tile.title }}">
-                            <span>
-                        {{ form.errors.title }}
-                    </span>
-                        </label>
-                        <br>
-                        <label style="width: 50%; display:block;">
-                            Главное изобржажение плитки
-                            <input type="file" name="main_image" id="tile_main_image"
-                                   style="width: 100%; display:block; border-radius: 5px; border: 1px solid #a1a1a1;">
-                            <span>
-                        {{ form.errors.main_image }}
-                    </span>
-                        </label>
-                        <br>
-                        <label style="width: 100%; display:block;">
-                            Описание плитки (до 130 символов)
-                            <textarea type="text" name="description" id="tile_description"
-                                      style="width: 50%; display:block; border-radius: 5px; border: 1px solid #a1a1a1; height: 120px">{{ tile.description }}</textarea>
-                            <span>
-                        {{ form.errors.description }}
-                    </span>
-                        </label>
-                        <label style="width: 100%;">
-                            <input type="checkbox" name="description" id="tile_description"
-                                   {% if tile.is_availabled %}checked{% endif %}>
-                            Активна ли плитка
-                        </label>
-                        <br>
-                        <div class="submit-row">
-                            <label>&nbsp;
-                                <input style="background-color: #1c2f5f" type="submit" value="Сохранить">
-                            </label>
+                        <div id="{{ project.id }}" class="project_short_base">
+                            <div class="row" data-project-id="{{ project.id }}">
+                                <div class="col-lg-12">
+                                    <div class="form-group" style="border: 1px solid black; margin-left: 5%; padding: 15px; display: flex; box-sizing: border-box; justify-content: space-between; cursor: pointer" id="project_short" data-id="{{ project.id }}">
+                                        <span>{{ project.title|title }}</span>
+                                        <img src="{% static 'images/figma/down-arrow.png' %}" width="16px" height="16px" style="transform: scale(1.5); margin-right: 18px; padding-top: 5px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="{{ project.id }}" class="project_full_base" style="display: none">
+                            <div class="row"
+                                 style="border: 1px solid black; padding: 15px; margin-left: 5%; margin-right:0;">
+                                <div class="col-lg-12">
+                                    <div>
+                                        <span style="margin-left: 5%">Название проекта</span>
+                                    </div>
+                                    <div>
+                                        <div class="form-group" style="margin-left: 5%;margin-top: 1%; display: flex; box-sizing: border-box; justify-content: space-between;">
+                                            <input type="text" class="form-control" name="title" id="edit_proj_title" style="width: 90%" value="{{ project.title }}">
+                                            <span>{{ form.errors.title }}</span>
+                                            <img src="{% static 'images/figma/up-arrow.png' %}" width="16px" height="16px" style="transform: scale(1.5);  cursor: pointer" id="up-arrow" data-id="{{ project.id }}">
+                                        </div>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <img src="{% static 'images/figma/Line.png' %}" width="95%" style="margin-left: 5%">
+                                    </div>
+
+                                    <div class="col-lg-12" style="margin-top: 2%; margin-left: 2%">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <span style="margin-left: 12%; position: absolute; top: 5px">Широта</span>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <input type="number" class="form-control" name="latitude" id="edit_proj_latitude" width="200px" value="{{ project.latitude|formatted_float }}">
+                                                        <span>{{ form.errors.latitude }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <span style="position: absolute; top: 5px">Долгота</span>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <input type="number" class="form-control" name="longitude" id="edit_proj_longitude" width="200px" value="{{ project.longitude|formatted_float }}">
+                                                        <span>{{ form.errors.longitude }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 2%">
+                                        <span style="margin-left: 5%">Описание</span>
+                                    </div>
+                                    <div style="margin-top: 2%">
+                                        <form>
+                                            <div class="form-group" style="margin-left: 5%">
+                                                <textarea id="editor_{{ project.id }}"  name="description" cols="100" rows="20">{{ project.description|safe }}</textarea>
+                                                <span>{{ form.errors.description }}</span>
+                                                <script>
+                                                    var ckeditor_{{ project.id }} = CKEDITOR.replace('editor_{{ project.id }}');
+                                                    AjaxFileManager.init({
+                                                        returnTo: 'ckeditor',
+                                                        editor: ckeditor1
+                                                    });
+                                                </script>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div style="margin-top: 2%; margin-left: 60%">
+                                        <form action="/sdfsdfdsfsdfsdfsd/" method="post" style="display: inline-block">
+                                            <button type="submit" class="btn btn-secondary" style="margin-right: 10px; display: inline-block">
+                                                <a href="{% url 'admin_project_remove' project.id %}" style="color: white">Удалить</a>
+                                            </button>
+                                        </form>
+                                        <button type="submit" class="btn btn-primary" style="display: inline-block">
+                                            Сохранить
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
-            </div>
-
-
+            {% endfor %}
         </div>
+    </div>
+    <div style="margin-top: 2%; width: 100%; margin-left: 65%;">
+        <button type="button" id="add_project" class="btn btn-info" style="display: inline-block; width: 20%; margin-right: 37%">Добавить
+            проект
+        </button>
+    </div>
+
+    <div id="add_project" class="container" style="padding-top: 20px; display: {% if not create_error %}none{% else %}block{% endif %}">
+        <form action="{% url 'admin_project_create' tile.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row" style="border: 1px solid black; padding: 15px; margin-left: 5%; margin-right:0;">
+                <div class="col-lg-12">
+                    <div>
+                        <span style="margin-left: 5%">Название нового проекта</span>
+                    </div>
+                    <div>
+                        <div class="form-group"
+                             style="margin-left: 5%;margin-top: 1%; display: flex; box-sizing: border-box; justify-content: space-between;">
+                            <input type="text" class="form-control" name="title" id="create_proj_title" style="width: 90%" value="{{ form_card.data.latitude }}">
+                            <span>{{ form.errors.title }}</span>
+                            <img src="{% static 'images/figma/up-arrow.png' %}" width="16px" height="16px"
+                                 style="transform: scale(1.5);  cursor: pointer" id="up-arrow" data-id="{{ project.id }}">
+                        </div>
+                    </div>
+                    <div style="width: 100%;">
+                        <img src="{% static 'images/figma/Line.png' %}" width="95%" style="margin-left: 5%">
+                    </div>
+
+                    <div class="col-lg-12" style="margin-top: 2%; margin-left: 2%">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <span style="margin-left: 12%; position: absolute; top: 5px">Широта</span>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <input type="number" class="form-control" width="200px" name="latitude" id="create_proj_latitude" value="{{ form_card.data.latitude }}">
+                                        <span>{{ form_card.errors.latitude }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <span style="position: absolute; top: 5px">Долгота</span>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <input type="number" class="form-control" width="200px" name="longitude" id="create_proj_longitude" value="{{ form_card.data.longitude }}">
+                                        <span>{{ form_card.errors.longitude }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2%">
+                        <span style="margin-left: 5%">Описание</span>
+                    </div>
+                    <div style="margin-top: 2%">
+                        <form>
+                            <div class="form-group" style="margin-left: 5%">
+                                {#                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>#}
+                                <textarea id="editor_{{ project.id }}" name="description" cols="100" rows="20">{{ form_card.data.description }}</textarea>
+                                <span>{{ form_card.errors.description }}</span>
+                                <script>
+                                    var ckeditor_{{ project.id }} = CKEDITOR.replace('editor_{{ project.id }}');
+                                    AjaxFileManager.init({
+                                        returnTo: 'ckeditor',
+                                        editor: ckeditor1
+                                    });
+                                </script>
+                            </div>
+                        </form>
+                    </div>
+                    <div style="margin-top: 2%; margin-left: 60%">
+                        <button type="button" class="btn btn-secondary" style="margin-right: 10px; display: inline-block" id="cansel_add_project">
+                            Отмена
+                        </button>
+                        <button type="button" class="btn btn-primary" style="display: inline-block">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div style="margin-top: 2%; width: 100%; margin-left: 20%; display: flex; box-sizing: border-box; justify-content: space-between;">
+        <button type="button" class="btn btn-secondary" style="display: inline-block; width: 20%">
+            {% if tile.is_availabled %}<a href="{% url 'admin_tile_off' pk=tile.id action=0 %}" style="color: white">Отключить</a>{% else %}
+                <a href="{% url 'admin_tile_off' pk=tile.id action=1 %}" style="color: white">Включить</a>{% endif %}</button>
+        <button type="button" class="btn btn-primary" style="display: inline-block; width: 20%; margin-right: 35%" id="save_tile_change_down">
+            Сохранить
+        </button>
     </div>
 
     <br><br>
@@ -139,8 +273,236 @@
     <br><br>
     <br><br>
     <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $('button#save_tile_change_down').on('click', function () {
+                $("form#save_tile_change").submit();
+            })
+
+            $('button#add_project').on('click', function () {
+                console.log($('div#add_project').attr('style'))
+                if ($('div#add_project').attr('style') == 'padding-top: 20px; display: none') {
+                    console.log('TRUE');
+                    $('div#add_project').attr('style', 'padding-top: 20px; display: block')
+                } else {
+                    console.log('FALSE');
+                    $('div#add_project').attr('style', 'padding-top: 20px; display: none')
+                }
+            });
+
+            $('button#cansel_add_project').on('click', function () {
+                $('div#add_project').attr('style', 'padding-top: 20px; display: none')
+            });
+
+
+            $('input[type=file]').on('change', function () {
+                nice_format($(this).prop('files')[0]);
+            });
+
+            function nice_format(file) {
+                var format = (file.name).split('.')[((file.name).split('.')).length - 1];
+                var nice_fomrats = ['jpeg', 'jpg', 'png', 'pdf'];
+                if (nice_fomrats.indexOf(format) != -1) {
+                    console.log(file.name)
+                    $('#show_file_name').html(file.name);
+                    $('#download_image').attr('class', 'btn btn-primary');
+                    return true
+                } else {
+                    $('#download_image').attr('class', 'btn btn-danger');
+                    return false
+                }
+            }
+
+
+            $('div#project_short').on('click', function () {
+                $('div.project_short_base[id=' + $(this).attr('data-id') + ']').attr('style', 'display: none');
+                $('div.project_full_base[id=' + $(this).attr('data-id') + ']').attr('style', 'display: block; padding-bottom: 20px');
+                console.log('click >>>>>>>>>');
+                console.log($(this).attr('data-id'))
+            });
+
+            $('img#up-arrow').on('click', function () {
+                console.log($(this).attr('data-id'))
+                $('div.project_short_base[id=' + $(this).attr('data-id') + ']').attr('style', 'display: block');
+                $('div.project_full_base[id=' + $(this).attr('data-id') + ']').attr('style', 'display: none');
+            })
+        });
+
+    </script>
+
+    {% block extra_style %}
+        <style>
+            .btn-file {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .btn-file input[type=file] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                min-width: 100%;
+                min-height: 100%;
+                font-size: 100px;
+                text-align: right;
+                filter: alpha(opacity=0);
+                opacity: 0;
+                outline: none;
+                background: white;
+                cursor: inherit;
+                display: block;
+            }
+
+            img#up-arrow:hover {
+                background-color: #949287;
+            }
+        </style>
+
+    {% endblock %}
+
+
+
+    {#    <div style="width: 100%; height: 100%">#}
+    {#        <h1 style="color: black">Оформление плитки Проекты</h1>#}
+    {#    </div>#}
+    {#    <br><br>#}
+    {#    <div class="row">#}
+    {#        <div class="col-lg-12">#}
+{#                {% if messages %}#}
+{#                    <div class="simplepagecontent">#}
+{#                        <div class="form-group feedback">#}
+{#                            {% for message in messages %}#}
+{#                                <h4><strong#}
+{#                                        style="color: {% if message.tags == 'error' %}red{% elif message.tags == 'success' %}green{% endif %}">{{ message }}</strong>#}
+{#                                </h4>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </div>#}
+{#                {% endif %}#}
+    {#            <form action="{% url 'admin_tile_edit' tile.id %}" method="post" enctype="multipart/form-data">#}
+    {#                {% csrf_token %}#}
+    {#                <label style="width: 100%; display:block;">#}
+    {#                    Заголовок плитки (отображается при наведение на нее во всплывающем)#}
+    {#                    <input type="text" name="title" id="tile_title" placeholder="Заголовок плитки"#}
+    {#                           style="width: 50%; display:block;" value="{{ tile.title }}">#}
+{#                        <span>{{ form.errors.title }}</span>#}
+    {#                </label>#}
+    {#                <br>#}
+    {#                <label style="width: 50%; display:block;">#}
+    {#                    Главное изобржажение плитки#}
+    {#                    <input type="file" name="main_image" id="tile_main_image"#}
+    {#                           style="width: 100%; display:block; border-radius: 5px; border: 1px solid #a1a1a1;">#}
+    {#                    <span>#}
+    {#                        {{ form.errors.main_image }}#}
+    {#                    </span>#}
+    {#                </label>#}
+    {#                <br>#}
+    {#                <label style="width: 100%; display:block;">#}
+    {#                    Описание плитки (до 130 символов)#}
+    {#                    <textarea type="text" name="description" id="tile_description"#}
+    {#                              style="width: 50%; display:block; border-radius: 5px; border: 1px solid #a1a1a1; height: 120px">{{ tile.description }}</textarea>#}
+    {#                    <span>#}
+    {#                        {{ form.errors.description }}#}
+    {#                    </span>#}
+    {#                </label>#}
+    {#                <label style="width: 100%;">#}
+    {#                    <input type="checkbox" name="description" id="tile_description"#}
+    {#                           {% if tile.is_availabled %}checked{% endif %}>#}
+    {#                    Активна ли плитка#}
+    {#                </label>#}
+    {#                <br>#}
+    {#                <div class="submit-row">#}
+    {#                    <label>&nbsp;#}
+    {#                        <input style="background-color: #1c2f5f" type="submit" value="Сохранить">#}
+    {#                    </label>#}
+    {#                </div>#}
+    {#            </form>#}
+    {#        </div>#}
+    {#    </div>#}
+    {##}
+    {##}
+    {##}
+    {##}
+    {#    <br><br>#}
+    {#    <div style="width: 100%; height: 100%">#}
+    {#        <h3 style="color: black">Проекты</h3>#}
+    {#    </div>#}
+    {#    <br>#}
+    {#    <div class="row">#}
+    {#        <div class="col-lg-12">#}
+    {#            <h4>Создать проект</h4>#}
+    {#            <form action="{% url 'admin_project_create' tile.id %}" method="post" enctype="multipart/form-data">#}
+    {#                {% csrf_token %}#}
+    {##}
+    {#                {{ form_card.as_p }}#}
+    {##}
+    {#                <br>#}
+    {#                <div class="submit-row">#}
+    {#                    <label>&nbsp;#}
+    {#                        <input style="background-color: #1c2f5f" type="submit" value="Сохранить">#}
+    {#                    </label>#}
+    {#                </div>#}
+    {#            </form>#}
+    {##}
+    {##}
+    {#        </div>#}
+    {#    </div>#}
+    {##}
+    {##}
+    {##}
+    {##}
+    {#    <br><br>#}
+    {#    <div style="width: 100%; height: 100%">#}
+    {#        <h3 style="color: black">Проекты</h3>#}
+    {#    </div>#}
+    {#    <br>#}
+    {#    <div class="row">#}
+    {#        <div class="col-lg-12">#}
+    {#            {% for project in projects %}#}
+    {#                <h4>Проект > {{ project.id }}</h4>#}
+    {#                <form action="{% url 'admin_project_edit' project.id %}" method="post" enctype="multipart/form-data">#}
+    {#                    {% csrf_token %}#}
+    {#                    <input type="text" name="title" id="project_title" placeholder="Название проекта"#}
+    {#                           style="width: 50%; display:block;" value="{{ project.title }}">#}
+    {##}
+    {#                    <br><br><br>#}
+    {##}
+    {#                    <div class="submit-row">#}
+    {#                        <label>&nbsp;#}
+    {#                            <input style="background-color: #1c2f5f" type="submit" value="Сохранить">#}
+    {#                        </label>#}
+    {#                    </div>#}
+    {#                </form>#}
+    {#            {% endfor %}#}
+    {##}
+    {##}
+    {#        </div>#}
+    {#    </div>#}
+    {##}
+    {#    <br><br>#}
+    {##}
+    {#    {{ ck_content }}#}
+    {##}
+    {#    <textarea id="editor1" name="txt" cols="100" rows="20">выавыаываы</textarea>#}
+    {#    <script type="text/javascript">#}
+    {#        var ckeditor1 = CKEDITOR.replace('editor1');#}
+    {#        AjexFileManager.init({#}
+    {#            returnTo: 'ckeditor',#}
+    {#            editor: ckeditor1#}
+    {#        });#}
+    {#    </script>#}
+    {#        <br><br>#}
+    {#        <br><br>#}
+    {#        <br><br>#}
+    {#        <br><br>#}
+    {#        <br><br>#}
+    {##}
+    {##}
+    {##}
+    {#    <br><br>#}
+    {#    <br><br>#}
 
 {% endblock %}

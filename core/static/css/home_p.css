@@ -80,15 +80,18 @@
     .ver-hor-center:hover {
         cursor: pointer;
     }
+    /*.ver-hor-center div#content_block {*/
+    /*    padding-top: 50px;*/
+    /*}*/
     .ver-hor-center {
-        background-color: #5E5694;
+        /*background-color: #5E5694;*/
         width: 40%;
         height: 40%;
         position: absolute;
         left: 50%;
         top: 50%;
         margin-left: -20%;
-        margin-top: -10%;
+        margin-top: -15%;
     }
 
     /*@media screen and (max-width: 1100px) {*/

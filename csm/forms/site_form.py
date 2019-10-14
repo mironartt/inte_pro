@@ -1,5 +1,7 @@
 from django import forms
 from core.models.globals import Tile, Project
+from ckeditor.widgets import CKEditorWidget
+
 
 class TileForm(forms.ModelForm):
 
@@ -24,14 +26,19 @@ class TileEditForm(forms.ModelForm):
         fields = ['title', 'main_image', 'description', 'is_availabled']
 
 
-class ProjectForm(forms.ModelForm):
+class ProjectCreateForm(forms.ModelForm):
 
     title = forms.CharField(max_length=100, required=True,)
     # main_image = forms.FileField()
     description = forms.Textarea()
-    latitude = forms.DecimalField(max_digits=10, decimal_places=6, required=False)
-    longitude = forms.DecimalField(max_digits=10, decimal_places=6, required=False)
+    latitude = forms.DecimalField(max_digits=10, decimal_places=6, required=True)
+    longitude = forms.DecimalField(max_digits=10, decimal_places=6, required=True)
 
     class Meta(object):
-        model = Tile
+        model = Project
         fields = ['title', 'description', 'latitude', 'longitude', ]
+
+
+class CKEditorForm(forms.Form):
+
+    content = forms.CharField(widget=CKEditorWidget())

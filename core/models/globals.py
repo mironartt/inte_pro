@@ -6,6 +6,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from solo.models import SingletonModel
 
 
+
 class SiteConf(SingletonModel):
 
     class Meta:
@@ -23,7 +24,7 @@ class Tile(models.Model):
         verbose_name_plural = 'Плитки'
 
     TYPE = (
-            ('projects', 'Проекты'),
+        ('projects', 'Проекты',),
         ('contacts', 'Контакты'),
         ('storage', 'Облачное хранилище'),
         ('requisites', 'Реквизиты'),
@@ -48,11 +49,12 @@ class Project(models.Model):
         verbose_name = 'Проект'
         verbose_name_plural = 'Проекты'
 
+    tile = models.ForeignKey(Tile, on_delete=models.CASCADE, verbose_name='Плитка к которой относится', related_name='tile', null=True)
     title = models.CharField(max_length=500, verbose_name='Название проекта')
     # main_image = models.ImageField(upload_to='project_img', verbose_name='Главное изображение Проекта')
     latitude = models.DecimalField('Географическая широта', max_digits=10, decimal_places=6, null=True)
     longitude = models.DecimalField('Географическая длина', max_digits=10, decimal_places=6, null=True)
-    description = RichTextUploadingField(verbose_name='Текс на главной странице')
+    description = RichTextUploadingField(verbose_name='Описание на главной странице')
 
     def __str__(self):
         return '(id:{0}) {1}{2}'.format(self.id, self.title, ' - {0}/{1}'.format(self.latitude, self.longitude) if self.latitude and self.longitude else '')

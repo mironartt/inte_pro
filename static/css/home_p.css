@@ -202,6 +202,16 @@
         transform: scale(1.1);
     }
 
+    /*.txt-all-2{*/
+    /*    color: white;*/
+    /*    !*font-size: 65px;*!*/
+    /*}*/
+    /*.txt-all-2:hover {*/
+    /*    -webkit-transform: scale(1.1);*/
+    /*    -ms-transform: scale(1.1);*/
+    /*    transform: scale(1.1);*/
+    /*}*/
+
 html, body {
     height: 100vh;
     width: 100vw;

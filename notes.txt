@@ -206,9 +206,35 @@ qwecd32KLJdsf3
 134.0.115.198
 apipT!_TStI4w3
 
-sshfs root@134.0.115.198:/ /home/truba/sshfs/server_3/
 
+
+
+sshfs root@134.0.115.198:/ /home/truba/sshfs/server_3/
+cd .
 
 ssh root@134.0.115.198
 sshpass -p 'apipT!_TStI4w3' ssh root@134.0.115.198
 
+git clone https://github.com/mironartt/inte_pro
+
+потом ставиь базу с юзером (в реадми этот кусок)
+поднимаешь виртуалку
+устанвливаешь модули:
+pip install -r requirements.txt
+
+вставляешь рядом с settings.py прикрепленный файл
+делаешь миграции
+добавляешь суперюзера
+
+
+для внесения изменений на сервере:
+ssh root@188.93.210.80       (если попросит, введи yes)
+пароль XiBNUS!CnpSp_4
+
+как подключишься введи:
+
+sudo service supervisor stop
+cd /home/myuser/www/inte_pro/
+git pull
+sudo touch /home/myuser/www/inte_pro/deployment/mysite_uwsgi.ini
+sudo service supervisor start

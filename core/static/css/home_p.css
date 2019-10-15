@@ -1,0 +1,11 @@
+.input1::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+.input1::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+.input1:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+.input1:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+.input1:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.input1:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+.input1:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+.input1:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+.input1::-webkit-input-placeholder       {font-size: medium}
+.input1::-moz-placeholder                {transform: scale(0.7)}

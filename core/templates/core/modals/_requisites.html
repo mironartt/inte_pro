@@ -1,90 +1,125 @@
-<div class="modal fade" id="requisites_modal" tabindex="-1" role="dialog" aria-labelledby="requisites_modal_label" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" style="width: 300%; margin-left: -100%; height: 97vh; overflow: scroll; transform: scale(0.9); background-color: #d9d9d9">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div clas="row">
-            <div class="col-lg-12">
-                <div>
-                    <p align="center"><span style="font-size: 35px">Реквизиты</span></p>
-                </div>
-            </div>
+{% load static %}
+<style>
+    div#company_info div.info_company {
+        padding-top: 18px;
+    }
 
-            <div class="col-lg-12">
-                <div>
-                    <p align="center"><span class="all_txt" style="font-size: 17px">Таким образом дальнейшее развитие</span></p><p align="center" style="margin-top:-1% " ><span class="all_txt" style="font-size: 17px">различных форм деятельности</span></p>
-                </div>
-            </div>
-
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="cart_comp" style="background-color: white;width: 100%; height:100px; border-radius: 4px;">
-                            &nbsp;&nbsp;<span style="border-radius: 12px;background: #F2F2F2;">Компания</span><br>
-                            &nbsp;&nbsp;<span style="font-weight: bold; font-size: 25px">ООО "ИнтеПро"</span><br>
-                            &nbsp;&nbsp;<span>ИНН 123456789</span><br>
+</style>
+<div class="modal fade" id="requisites_modal" tabindex="-1" role="dialog" aria-labelledby="requisites_modal_label"
+     aria-hidden="true" style="overflow: hidden">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"
+             style="width: 300%; margin-left: -100%; height: 97vh; overflow: hidden; transform: scale(0.9); background-color: #d9d9d9">
+{#            <div class="modal-header">#}
+{#            <div style="position: absolute; width: 100%">#}
+{#                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="">#}
+{#                    <span aria-hidden="true">&times;</span>#}
+{#                </button>#}
+{#            </div>#}
+            <div class="modal-body">
+                <div clas="row">
+                    <div class="col-lg-12">
+                        <div>
+                            <p align="center"><span style="font-size: 35px">Реквизиты</span></p>
                         </div>
                     </div>
-                    <div class="col-lg-8" style="background-color: white;width: 100%; height:600px; border-radius: 4px;">
-                        <span style="border-radius: 12px;background: #F2F2F2;">Компания</span><br>
+
+                    <div class="col-lg-12">
+                        <div>
+                            <p align="center"><span class="all_txt" style="font-size: 17px">Таким образом дальнейшее развитие</span>
+                            </p>
+                            <p align="center" style="margin-top:-1% "><span class="all_txt" style="font-size: 17px">различных форм деятельности</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
                         <div class="row">
-                            <div class="col-lg-6 " style="width: 100%">
-                                <span style="font-weight: bold; font-size: 25px">ООО "ИнтеПро"</span><br>
-                                <span style="font-weight: bold;">ИНН</span><span> 123456789</span><br>
-                                <span style="font-weight: bold;">ОГРН</span><span> 123456789</span><br>
-                                <span style="font-weight: bold;">Юр. адрес</span><span> 123456789</span><br>
-                                <span style="font-weight: bold;">Телефон</span><span> 123456789</span><br>
-                                <span style="font-weight: bold;">Email</span><span> 123456789</span><br>
-                                <span style="font-weight: bold;">Ген. директор</span><span> 123456789</span><br>
-                                <span style="font-weight: bold;">Действующий на основании</span><span> 123456789</span><br>
-                                <span style="font-weight: bold;">Классификаторы в статическом регистре</span><span> 123456789</span><br>
-                                <div class="row">
-                                    <div class="col-lg-12" style="padding: -1px">
+                            <div class="col-lg-3">
+                                <div class="cart_comp" style="background-color: white;width: 100%; height:20%; border-radius: 4px; padding: 20px">
+                                    <div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+                                        <span style="padding: 5px">Компания</span>
+                                    </div>
+                                    <div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро"</div>
+                                    <div>ИНН 123456789</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8" style="background-color: white;width: 100%; height:600px; border-radius: 4px; padding: 20px">
+
+                                <div class="row" style="height: 100%; padding-right: 20px">
+                                    <div class="col-lg-6 " style="width: 100%; " id="company_info">
+                                        <div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+                                            <span style="padding: 5px">Компания</span>
+                                        </div>
+                                        <div class="info_company" style="font-weight: bold; font-size: 25px">ООО "ИнтеПро"</div>
+                                        <div class="info_company" style="font-weight: bold; ">ИНН<span> 123456789</span></div>
+                                        <div class="info_company" style="font-weight: bold;">ОГРН<span> 123456789</span></div>
+                                        <div class="info_company" style="font-weight: bold;">Юр. адрес<span> 1234563789</span></div>
+                                        <div class="info_company" style="font-weight: bold;">Телефон<span> 123456789</span></div>
+                                        <div class="info_company" style="font-weight: bold;">Email<span> 123456789</span></div>
+                                        <div class="info_company" style="font-weight: bold;">Ген. директор<span> 123456789</span></div>
+                                        <div class="info_company" style="font-weight: bold;">Действующий на основании<span> 123456789</span></div>
+                                        <div class="info_company" style="font-weight: bold;">Классификаторы в статическом регистре<span> 123456789</span></div>
                                         <div class="row">
-                                            <div class="col-lg-6">
-                                                    <span>ОКПО:</span><span>123456789</span><br>
-                                                    <span>ОКОГУ:</span><span>123456789</span><br>
-                                                    <span>ОКОПФ:</span><span>123456789</span>
+                                            <div class="col-lg-12" style="padding: -1px">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <span>ОКПО:</span><span>123456789</span><br>
+                                                        <span>ОКОГУ:</span><span>123456789</span><br>
+                                                        <span>ОКОПФ:</span><span>123456789</span>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <span>ОКАТО:</span><span>123456789</span><br>
+                                                        <span>ОКТМО:</span><span>123456789</span><br>
+                                                        <span>ОКТМО:</span><span>123456789</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-lg-6" >
-                                                <span>ОКАТО:</span><span>123456789</span><br>
-                                                <span>ОКТМО:</span><span>123456789</span><br>
-                                                <span>ОКТМО:</span><span>123456789</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6" style="height: 100%">
+                                        <div class="row" style="height: 100%">
+                                            <div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
+                                                <div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
+                                                    <button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
+                                                        <img src="{% static 'images/figma/send_window_icon.png' %}" width="50px" /><span>Скачать</span>
+                                                    </button>
+                                                </div>
+                                                <div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
+                                                    <button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
+                                                        <img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px" /><span style="margin-left: 5px;">Отправить</span>
+                                                    </button>
+                                                </div>
                                             </div>
+
+{#                                            <div class="col-lg-12" style="padding-top: 20px; height: 100%">#}
+{#                                                <div class="row" style="background-color: #dfe8ca; height: 70%; border: 1px solid #727272; border-radius: 10px;">#}
+{#                                                    <div class="col-lg-12" style="height: 100%">#}
+{##}
+{#                                                        <div class="row" style="height: 100%">#}
+{#                                                            <div class="col-lg-12" style="height: 20%; background-color: #00C3DA">#}
+{#                                                                cod#}
+{#                                                            </div>#}
+{#                                                        </div>#}
+{##}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div>
-                                    <button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 25%; width: 45%;font-size: 150%;">Скачать</button>
-                                    <button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 25%; width: 45%;font-size: 150%;">Отправить</button>
-                                </div>
-                                <div>
-
-                                </div>
-
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {#      <div class="modal-footer">#}
+            {#          возможно пригодится и футер#}
+            {#        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
+            {#        <button type="button" class="btn btn-primary">Save changes</button>#}
+            {#      </div>#}
+
+
         </div>
-      </div>
-{#      <div class="modal-footer">#}
-{#          возможно пригодится и футер#}
-{#        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
-{#        <button type="button" class="btn btn-primary">Save changes</button>#}
-{#      </div>#}
-
-
-
-
-
     </div>
-  </div>
 </div>

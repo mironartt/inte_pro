@@ -1,125 +1,1006 @@
 {% load static %}
 <style>
-    div#company_info div.info_company {
-        padding-top: 18px;
-    }
+
+	div#block_company_contents {
+		height: 100%;
+		padding-right: 20px;
+	}
+	div.marn_top {
+		margin-top: 20px
+	}
+	div.active_comp {
+		background-color: #dbe1d3;
+		border: 2px solid black;
+	}
+	div.cart_comp {
+		background-color: white;
+		width: 100%;
+		height:20%;
+		border-radius: 20px;
+		padding: 20px
+	}
+	div.cart_comp:hover {
+		cursor: pointer;
+		box-shadow: #3c3c3c 0 0px 10px inset;
+		border-radius: 20px;
+	}
+	div#company_info div.info_company {
+		padding-top: 10px;
+	}
+
+	div#company_info div.info_company div {
+		font-weight: normal;
+		color: grey;
+	}
+
+	div#company_info div.info_company span {
+		font-weight: normal;
+		color: grey;
+	}
+
+	div#header_name_bank button {
+		white-space: nowrap;
+		width: 110px;
+		border-radius: 20px;
+		font-size: 0.8rem;
+		{#width: 130px;#}
+		height: 40px;
+	}
+	div#header_name_bank button.btn-secondary {
+		background-color: red;
+		color: white;
+
+	}
+	div#header_name_bank div.col-lg-12 {
+		{#height: 20%;#}
+		{#border: 1px solid black;#}
+		{#border-radius: 10px;#}
+		{#overflow-y:  hidden;#}
+		{#overflow-x: scroll;#}
+		{#white-space:nowrap;#}
+		{#display: inline-block;#}
+		{#padding-right: 100px;#}
+		{#width: 90%;#}
+
+	}
+	div#header_name_bank div.col-lg-12 div {
+
+		{#display: inline-block#}
+	}
+	::-webkit-scrollbar {
+		width: 3px; height: 30px;
+
+	}
+	::-webkit-scrollbar-button {
+		background-color: #660050;
+		display: none;
+
+	}
+	::-webkit-scrollbar-track {
+		background-color: #629900;
+
+	}
+	::-webkit-scrollbar-track-piece {
+		background-color: #bdc0a7;
+
+	}
+	::-webkit-scrollbar-thumb {
+		height: 50px;
+		background-color: #494842;
+		border-radius: 3px;
+		{#position: absolute;#}
+		{#padding-top: 50px;#}
+		{#top: 20px;#}
+		{#margin-top: 20px;#}
+	}
+	::-webkit-scrollbar-corner {
+		background-color: #3fff8e;
+
+
+	}
+	::-webkit-resizer {
+		background-color: #0042ff;
+		{#position: absolute;#}
+	}
+
+	.horizontal-scroll-wrapper{
+	  position:absolute;
+	  display:block;
+	  top:0;
+	  left:0;
+	  width:80px;
+	  max-height: 470px;
+	  margin:0;
+	  {#background:#abc;#}
+	  overflow-y:auto;
+	  overflow-x:hidden;
+	  transform:rotate(-90deg) translateY(-80px);
+	  transform-origin:right top;
+	}
+	.horizontal-scroll-wrapper > div{
+		display:block;
+		padding-top:4%;
+		padding-left: 10px;
+		padding-right: 10px;
+		{#padding:5px;#}
+		{#background:#cab;#}
+		transform:rotate(90deg);
+		transform-origin: right top;
+	}
+
+	.rectangles{
+	  {#top:100px;#}
+	  padding:100px 0 0 0;
+	}
+	.rectangles > div{
+	  width:140px;
+	  height:60px;
+	  margin:60px 10px;
+	  padding:5px;
+	  transform:rotate(90deg) translateY(80px);
+	  transform-origin: right top;
+	}
 
 </style>
 <div class="modal fade" id="requisites_modal" tabindex="-1" role="dialog" aria-labelledby="requisites_modal_label"
-     aria-hidden="true" style="overflow: hidden">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content"
-             style="width: 300%; margin-left: -100%; height: 97vh; overflow: hidden; transform: scale(0.9); background-color: #d9d9d9">
-{#            <div class="modal-header">#}
-{#            <div style="position: absolute; width: 100%">#}
-{#                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="">#}
-{#                    <span aria-hidden="true">&times;</span>#}
-{#                </button>#}
-{#            </div>#}
-            <div class="modal-body">
-                <div clas="row">
-                    <div class="col-lg-12">
-                        <div>
-                            <p align="center"><span style="font-size: 35px">Реквизиты</span></p>
-                        </div>
-                    </div>
+	 aria-hidden="true" style="overflow: hidden">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content"
+			 style="width: 300%; margin-left: -100%; height: 105vh; overflow: hidden; transform: scale(0.9); background-color: #d9d9d9; bottom: 6vh">
+			{#            <div class="modal-header">#}
+			{#            <div style="position: absolute; width: 100%">#}
+			{#                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="">#}
+			{#                    <span aria-hidden="true">&times;</span>#}
+			{#                </button>#}
+			{#            </div>#}
+			<div class="modal-body" style="">
+				<div clas="row">
+					<div class="col-lg-12">
+						<div>
+							<p align="center"><span style="font-size: 35px">Реквизиты</span></p>
+						</div>
+					</div>
 
-                    <div class="col-lg-12">
-                        <div>
-                            <p align="center"><span class="all_txt" style="font-size: 17px">Таким образом дальнейшее развитие</span>
-                            </p>
-                            <p align="center" style="margin-top:-1% "><span class="all_txt" style="font-size: 17px">различных форм деятельности</span>
-                            </p>
-                        </div>
-                    </div>
+					<div class="col-lg-12">
+						<div>
+							<p align="center"><span class="all_txt" style="font-size: 17px">Таким образом дальнейшее развитие</span>
+							</p>
+							<p align="center" style="margin-top:-1% "><span class="all_txt" style="font-size: 17px">различных форм деятельности</span>
+							</p>
+						</div>
+					</div>
 
-                    <div class="col-lg-12">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="cart_comp" style="background-color: white;width: 100%; height:20%; border-radius: 4px; padding: 20px">
-                                    <div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
-                                        <span style="padding: 5px">Компания</span>
-                                    </div>
-                                    <div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро"</div>
-                                    <div>ИНН 123456789</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-8" style="background-color: white;width: 100%; height:600px; border-radius: 4px; padding: 20px">
+					<div class="col-lg-12">
+						<div class="row">
+							<div class="col-lg-3" style="overflow-x: hidden; overflow-y: scroll; height: 80vh; direction: rtl;" id="block_company_titles">
+								<div class="cart_comp active_comp" style="" id="company_title" data-id="1">
+									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+										<span style="padding: 5px">Компания</span>
+									</div>
+									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_1"</div>
+									<div>ИНН 123456789</div>
+								</div>
 
-                                <div class="row" style="height: 100%; padding-right: 20px">
-                                    <div class="col-lg-6 " style="width: 100%; " id="company_info">
-                                        <div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
-                                            <span style="padding: 5px">Компания</span>
-                                        </div>
-                                        <div class="info_company" style="font-weight: bold; font-size: 25px">ООО "ИнтеПро"</div>
-                                        <div class="info_company" style="font-weight: bold; ">ИНН<span> 123456789</span></div>
-                                        <div class="info_company" style="font-weight: bold;">ОГРН<span> 123456789</span></div>
-                                        <div class="info_company" style="font-weight: bold;">Юр. адрес<span> 1234563789</span></div>
-                                        <div class="info_company" style="font-weight: bold;">Телефон<span> 123456789</span></div>
-                                        <div class="info_company" style="font-weight: bold;">Email<span> 123456789</span></div>
-                                        <div class="info_company" style="font-weight: bold;">Ген. директор<span> 123456789</span></div>
-                                        <div class="info_company" style="font-weight: bold;">Действующий на основании<span> 123456789</span></div>
-                                        <div class="info_company" style="font-weight: bold;">Классификаторы в статическом регистре<span> 123456789</span></div>
-                                        <div class="row">
-                                            <div class="col-lg-12" style="padding: -1px">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <span>ОКПО:</span><span>123456789</span><br>
-                                                        <span>ОКОГУ:</span><span>123456789</span><br>
-                                                        <span>ОКОПФ:</span><span>123456789</span>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <span>ОКАТО:</span><span>123456789</span><br>
-                                                        <span>ОКТМО:</span><span>123456789</span><br>
-                                                        <span>ОКТМО:</span><span>123456789</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6" style="height: 100%">
-                                        <div class="row" style="height: 100%">
-                                            <div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
-                                                <div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
-                                                    <button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
-                                                        <img src="{% static 'images/figma/send_window_icon.png' %}" width="50px" /><span>Скачать</span>
-                                                    </button>
-                                                </div>
-                                                <div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
-                                                    <button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
-                                                        <img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px" /><span style="margin-left: 5px;">Отправить</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+								<!-- #################### EXAMPLE ####################-->
+								<div class="cart_comp" style="margin-top: 20px" id="company_title" data-id="2">
+									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+										<span style="padding: 5px">Компания</span>
+									</div>
+									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_2"</div>
+									<div>ИНН 123456789</div>
+								</div>
+								<div class="cart_comp marn_top" style="margin-top: 20px" id="company_title" data-id="3">
+									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+										<span style="padding: 5px">Компания</span>
+									</div>
+									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_3"</div>
+									<div>ИНН 123456789</div>
+								</div>
+								<div class="cart_comp" style="margin-top: 20px" id="company_title" data-id="4">
+									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+										<span style="padding: 5px">Компания</span>
+									</div>
+									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_4"</div>
+									<div>ИНН 123456789</div>
+								</div>
+								<div class="cart_comp" style="margin-top: 20px" id="company_title" data-id="5">
+									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+										<span style="padding: 5px">Компания</span>
+									</div>
+									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_5"</div>
+									<div>ИНН 123456789</div>
+								</div>
+								<div class="cart_comp " style="margin-top: 20px"  id="company_title" data-id="6">
+									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+										<span style="padding: 5px">Компания</span>
+									</div>
+									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_6"</div>
+									<div>ИНН 123456789</div>
+								</div>
+								<!-- #################### /EXAMPLE ####################-->
 
-{#                                            <div class="col-lg-12" style="padding-top: 20px; height: 100%">#}
-{#                                                <div class="row" style="background-color: #dfe8ca; height: 70%; border: 1px solid #727272; border-radius: 10px;">#}
-{#                                                    <div class="col-lg-12" style="height: 100%">#}
-{##}
-{#                                                        <div class="row" style="height: 100%">#}
-{#                                                            <div class="col-lg-12" style="height: 20%; background-color: #00C3DA">#}
-{#                                                                cod#}
-{#                                                            </div>#}
-{#                                                        </div>#}
-{##}
-{#                                                    </div>#}
-{#                                                </div>#}
-{#                                            </div>#}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {#      <div class="modal-footer">#}
-            {#          возможно пригодится и футер#}
-            {#        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
-            {#        <button type="button" class="btn btn-primary">Save changes</button>#}
-            {#      </div>#}
+							</div>
+							<div class="col-lg-8" style="background-color: white;width: 100%; height: 80vh; border-radius: 4px; padding: 20px;">
+								{% for i in '1' %}
+									<div class="row" style="" id="block_company_contents" data-id-block="1" >
+										<div class="col-lg-6 copmane_content" style="width: 100%; height: 50%" id="company_info" data-id-block="1">
+											<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+												<span style="padding: 5px">Компания</span>
+											</div>
+											<div class="info_company" style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_1"</div>
+											<div class="info_company" style="font-weight: bold; ">ИНН<span> 123456789</span></div>
+											<div class="info_company" style="font-weight: bold;">ОГРН<span> 123456789</span></div>
+											<div class="info_company" style="font-weight: bold;">Юр. адрес
+												<div> 1234563789</div>
+											</div>
+											<div class="info_company" style="font-weight: bold;">Телефон
+												<div> 123456789</div>
+											</div>
+											<div class="info_company" style="font-weight: bold;">Email
+												<div> 123456789</div>
+											</div>
+											<div class="info_company" style="font-weight: bold;">Ген. директор
+												<div> 123456789</div>
+											</div>
+											<div class="info_company" style="font-weight: bold;">Действующий на основании
+												<div> 123456789</div>
+											</div>
+											<div class="info_company" style="font-weight: bold;">Классификаторы в статическом регистре</div>
+											<div class="row">
+												<div class="col-lg-12" style="padding: -1px">
+													<div class="row">
+														<div class="col-lg-6">
+															<span>ОКПО:</span><span>123456789</span><br>
+															<span>ОКОГУ:</span><span>123456789</span><br>
+															<span>ОКОПФ:</span><span>123456789</span>
+														</div>
+														<div class="col-lg-6">
+															<span>ОКАТО:</span><span>123456789</span><br>
+															<span>ОКТМО:</span><span>123456789</span><br>
+															<span>ОКТМО:</span><span>123456789</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-lg-6" style="height: 100%">
+											<div class="row" style="height: 100%">
+												<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
+													<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
+														<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
+															<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+														</button>
+													</div>
+													<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
+														<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
+															<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+														</button>
+													</div>
+												</div>
+
+												<div class="col-lg-12" style="padding-top: 20px; height: 100%">
+													<div class="row" style="height: 70%; box-sizing:border-box;">
+														<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+
+															<div class="row" style="height: 100%" >
+																<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+																	<div class="btn1" style="" data-id-btn-banck="1" data-id-block-bank="1">
+																		<button style="" class="btn btn-secondary">АльфаБанк</button>
+																	</div>
+																	<div class="btn1" style="" data-id-btn-banck="2" data-id-block-bank="1">
+																		<button style="" class="btn btn-outline-secondary">ВТБ</button>
+																	</div>
+																	<!-- #################### EXAMPLE ####################-->
+																	<div class="outline1" style="" data-id-btn-banck="3" data-id-block-bank="1">
+																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+																	</div>
+																	<div class="outline1" style="" data-id-btn-banck="4" data-id-block-bank="1">
+																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+																	</div>
+																	<div class="outline1" style="" data-id-btn-banck="5" data-id-block-bank="1">
+																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+																	</div>
+																	<div class="outline1" style="" data-id-btn-banck="6" data-id-block-bank="1">
+																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+																	</div>
+																	<!-- #################### /EXAMPLE ####################-->
+																</div>
+																<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+																	<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
+																</div>
+																<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
+																	<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
+																		<div class="info_company" style="font-weight: bold;">
+																			Банк
+																			<div>АО «АЛЬФА-БАНК»</div>
+																		</div>
+																		<div class="info_company" style="font-weight: bold;">
+																			Расчетный счет
+																			<div>40702810501300010841</div>
+																		</div>
+																		<div class="info_company" style="font-weight: bold;">
+																			Кор. счет
+																			<div>30101810200000000593</div>
+																		</div>
+																		<div class="info_company" style="font-weight: bold;">Ген. директор
+																			<div> 123456789</div>
+																		</div>
+																		<div class="info_company" style="font-weight: bold;">
+																			БИК Банка
+																			<div>044525593</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+								<!-- #################### EXAMPLE ####################-->
+								 <div class="row" style="display: none" id="block_company_contents" data-id-block="2">
+									<div class="col-lg-6 copmane_content" style="width: 100%; height: 50%" id="company_info" data-id-block="2">
+										<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+											<span style="padding: 5px">Компания</span>
+										</div>
+										<div class="info_company" style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_2"</div>
+										<div class="info_company" style="font-weight: bold; ">ИНН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">ОГРН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">Юр. адрес
+											<div> 1234563789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Телефон
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Email
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Ген. директор
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Действующий на основании
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Классификаторы в статическом регистре</div>
+										<div class="row">
+											<div class="col-lg-12" style="padding: -1px">
+												<div class="row">
+													<div class="col-lg-6">
+														<span>ОКПО:</span><span>123456789</span><br>
+														<span>ОКОГУ:</span><span>123456789</span><br>
+														<span>ОКОПФ:</span><span>123456789</span>
+													</div>
+													<div class="col-lg-6">
+														<span>ОКАТО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6" style="height: 100%">
+										<div class="row" style="height: 100%">
+											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
+														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+													</button>
+												</div>
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
+														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+													</button>
+												</div>
+											</div>
+
+											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
+												<div class="row" style="height: 70%; box-sizing:border-box;">
+													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+
+														<div class="row" style="height: 100%" >
+															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-secondary">АльфаБанк</button>
+																</div>
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
+																</div>
+																<!-- #################### EXAMPLE ####################-->
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+																</div>
+																<!-- #################### /EXAMPLE ####################-->
+															</div>
+															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
+															</div>
+															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
+																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
+																	<div class="info_company" style="font-weight: bold;">
+																		Банк
+																		<div>АО «АЛЬФА-БАНК»</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Расчетный счет
+																		<div>40702810501300010841</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Кор. счет
+																		<div>30101810200000000593</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">Ген. директор
+																		<div> 123456789</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		БИК Банка
+																		<div>044525593</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 
 
-        </div>
-    </div>
+
+
+								<div class="row" style="display: none" id="block_company_contents" data-id-block="3">
+									<div class="col-lg-6 copmane_content" style="width: 100%; height: 50%" id="company_info" data-id-block="3">
+										<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+											<span style="padding: 5px">Компания</span>
+										</div>
+										<div class="info_company" style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_3"</div>
+										<div class="info_company" style="font-weight: bold; ">ИНН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">ОГРН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">Юр. адрес
+											<div> 1234563789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Телефон
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Email
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Ген. директор
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Действующий на основании
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Классификаторы в статическом регистре</div>
+										<div class="row">
+											<div class="col-lg-12" style="padding: -1px">
+												<div class="row">
+													<div class="col-lg-6">
+														<span>ОКПО:</span><span>123456789</span><br>
+														<span>ОКОГУ:</span><span>123456789</span><br>
+														<span>ОКОПФ:</span><span>123456789</span>
+													</div>
+													<div class="col-lg-6">
+														<span>ОКАТО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6" style="height: 100%">
+										<div class="row" style="height: 100%">
+											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
+														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+													</button>
+												</div>
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
+														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+													</button>
+												</div>
+											</div>
+
+											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
+												<div class="row" style="height: 70%; box-sizing:border-box;">
+													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+
+														<div class="row" style="height: 100%" >
+															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-secondary">АльфаБанк</button>
+																</div>
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
+																</div>
+																<!-- #################### EXAMPLE ####################-->
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+																</div>
+																<!-- #################### /EXAMPLE ####################-->
+															</div>
+															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
+															</div>
+															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
+																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
+																	<div class="info_company" style="font-weight: bold;">
+																		Банк
+																		<div>АО «АЛЬФА-БАНК»</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Расчетный счет
+																		<div>40702810501300010841</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Кор. счет
+																		<div>30101810200000000593</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">Ген. директор
+																		<div> 123456789</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		БИК Банка
+																		<div>044525593</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+								<div class="row" style="display: none" id="block_company_contents" data-id-block="4">
+									<div class="col-lg-6 copmane_content" style="width: 100%; height: 50%" id="company_info" data-id-block="4">
+										<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+											<span style="padding: 5px">Компания</span>
+										</div>
+										<div class="info_company" style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_4"</div>
+										<div class="info_company" style="font-weight: bold; ">ИНН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">ОГРН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">Юр. адрес
+											<div> 1234563789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Телефон
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Email
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Ген. директор
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Действующий на основании
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Классификаторы в статическом регистре</div>
+										<div class="row">
+											<div class="col-lg-12" style="padding: -1px">
+												<div class="row">
+													<div class="col-lg-6">
+														<span>ОКПО:</span><span>123456789</span><br>
+														<span>ОКОГУ:</span><span>123456789</span><br>
+														<span>ОКОПФ:</span><span>123456789</span>
+													</div>
+													<div class="col-lg-6">
+														<span>ОКАТО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6" style="height: 100%">
+										<div class="row" style="height: 100%">
+											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
+														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+													</button>
+												</div>
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
+														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+													</button>
+												</div>
+											</div>
+
+											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
+												<div class="row" style="height: 70%; box-sizing:border-box;">
+													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+
+														<div class="row" style="height: 100%" >
+															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-secondary">АльфаБанк</button>
+																</div>
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
+																</div>
+																<!-- #################### EXAMPLE ####################-->
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+																</div>
+																<!-- #################### /EXAMPLE ####################-->
+															</div>
+															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
+															</div>
+															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
+																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
+																	<div class="info_company" style="font-weight: bold;">
+																		Банк
+																		<div>АО «АЛЬФА-БАНК»</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Расчетный счет
+																		<div>40702810501300010841</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Кор. счет
+																		<div>30101810200000000593</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">Ген. директор
+																		<div> 123456789</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		БИК Банка
+																		<div>044525593</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+								<div class="row" style="display: none" id="block_company_contents" data-id-block="5">
+									<div class="col-lg-6 copmane_content" style="width: 100%; height: 50%" id="company_info" data-id-block="5">
+										<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+											<span style="padding: 5px">Компания</span>
+										</div>
+										<div class="info_company" style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_5"</div>
+										<div class="info_company" style="font-weight: bold; ">ИНН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">ОГРН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">Юр. адрес
+											<div> 1234563789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Телефон
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Email
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Ген. директор
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Действующий на основании
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Классификаторы в статическом регистре</div>
+										<div class="row">
+											<div class="col-lg-12" style="padding: -1px">
+												<div class="row">
+													<div class="col-lg-6">
+														<span>ОКПО:</span><span>123456789</span><br>
+														<span>ОКОГУ:</span><span>123456789</span><br>
+														<span>ОКОПФ:</span><span>123456789</span>
+													</div>
+													<div class="col-lg-6">
+														<span>ОКАТО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6" style="height: 100%">
+										<div class="row" style="height: 100%">
+											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
+														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+													</button>
+												</div>
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
+														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+													</button>
+												</div>
+											</div>
+
+											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
+												<div class="row" style="height: 70%; box-sizing:border-box;">
+													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+
+														<div class="row" style="height: 100%" >
+															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-secondary">АльфаБанк</button>
+																</div>
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
+																</div>
+																<!-- #################### EXAMPLE ####################-->
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+																</div>
+																<!-- #################### /EXAMPLE ####################-->
+															</div>
+															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
+															</div>
+															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
+																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
+																	<div class="info_company" style="font-weight: bold;">
+																		Банк
+																		<div>АО «АЛЬФА-БАНК»</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Расчетный счет
+																		<div>40702810501300010841</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Кор. счет
+																		<div>30101810200000000593</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">Ген. директор
+																		<div> 123456789</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		БИК Банка
+																		<div>044525593</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+								<div class="row" style="display: none" id="block_company_contents" data-id-block="6">
+									<div class="col-lg-6 copmane_content" style="width: 100%; height: 50%" id="company_info" data-id-block="6">
+										<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
+											<span style="padding: 5px">Компания</span>
+										</div>
+										<div class="info_company" style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_6"</div>
+										<div class="info_company" style="font-weight: bold; ">ИНН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">ОГРН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold;">Юр. адрес
+											<div> 1234563789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Телефон
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Email
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Ген. директор
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Действующий на основании
+											<div> 123456789</div>
+										</div>
+										<div class="info_company" style="font-weight: bold;">Классификаторы в статическом регистре</div>
+										<div class="row">
+											<div class="col-lg-12" style="padding: -1px">
+												<div class="row">
+													<div class="col-lg-6">
+														<span>ОКПО:</span><span>123456789</span><br>
+														<span>ОКОГУ:</span><span>123456789</span><br>
+														<span>ОКОПФ:</span><span>123456789</span>
+													</div>
+													<div class="col-lg-6">
+														<span>ОКАТО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span><br>
+														<span>ОКТМО:</span><span>123456789</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6" style="height: 100%">
+										<div class="row" style="height: 100%">
+											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
+														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+													</button>
+												</div>
+												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
+													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
+														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+													</button>
+												</div>
+											</div>
+
+											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
+												<div class="row" style="height: 70%; box-sizing:border-box;">
+													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+
+														<div class="row" style="height: 100%" >
+															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-secondary">АльфаБанк</button>
+																</div>
+																<div class="btn1" style="">
+																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
+																</div>
+																<!-- #################### EXAMPLE ####################-->
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+																</div>
+																<div class="outline1" style="">
+																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+																</div>
+																<!-- #################### /EXAMPLE ####################-->
+															</div>
+															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
+															</div>
+															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
+																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
+																	<div class="info_company" style="font-weight: bold;">
+																		Банк
+																		<div>АО «АЛЬФА-БАНК»</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Расчетный счет
+																		<div>40702810501300010841</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		Кор. счет
+																		<div>30101810200000000593</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">Ген. директор
+																		<div> 123456789</div>
+																	</div>
+																	<div class="info_company" style="font-weight: bold;">
+																		БИК Банка
+																		<div>044525593</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+								<!-- #################### /EXAMPLE ####################-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+{#			<div class="modal-footer">#}
+{#			возможно пригодится и футер#}
+{#			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
+{#			<button type="button" class="btn btn-primary">Save changes</button>#}
+{#			</div>#}
+
+
+		</div>
+	</div>
 </div>
+
+<script>
+	$(document).ready(function () {
+	   console.log('START!!!!!!!!!!!!!')
+		$('div.cart_comp').on('click', function () {
+			console.log($(this).attr('data-id'));
+			// $(this).attr('data-id')
+			{#style="display: none#}
+			$('div#block_company_contents').attr('style', 'display: none');
+			$('div#block_company_contents.row[data-id-block='+$(this).attr('data-id')+']').attr('style', '');;
+
+			console.log($('div#block_company_contents.row'))
+
+			$('div.cart_comp').attr('class', 'cart_comp');
+			$(this).attr('class', 'cart_comp active_comp');
+
+			{#$(this).attr('hidden', true)#}
+        })
+
+		$('button[class="btn btn-outline-secondary"]').on('click', function () {
+		    // $(this).attr('data-id-btn-banck');
+		    // $(this).attr('data-id-block');
+			console.log('data-id-btn-banck >>>>> ' + $(this).parent().attr('data-id-btn-banck'));
+			console.log('data-id-block >>>>> ' + $(this).parent().attr('data-id-block'));
+
+
+			{#$('div[class="btn btn-outline-secondary"][data-id-block="'+$(this).parent().attr('data-id-block')+'"]').attr('class', 'btn btn-outline-secondary');#}
+
+			{#console.log($(this).parent().attr('data-id-block'));#}
+			{#$('div[data-id-block-bank='+$(this).parent().attr('data-id-block-bank')+'] button').attr('class', 'btn btn-outline-secondary');#}
+			$('div[data-id-block-bank='+$(this).parent().attr('data-id-block-bank')+'] button').remove();
+			$(this).attr('class', 'btn btn-secondary');
+			{#$('div[data-id-block="'+$(this).parent().attr('data-id-block')+'"][data-id-btn-banck="'+$(this).parent().attr('data-id-btn-banck')+'"]').attr('class', 'btn btn-secondary');#}
+        })
+
+// data-id-btn-banck data-id-block
+    });
+</script>

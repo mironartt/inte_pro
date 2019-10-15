@@ -1,82 +1,84 @@
 {% load static %}
 <style>
-    body {
-        background-color: #F9F9F9;
+	body {
+		background-color: #F9F9F9;
 
-    }
+	}
 
-    .txt-top {
-        text-align: center;
-        color: black;
-    }
+	.txt-top {
+		text-align: center;
+		color: black;
+	}
 
 
-    .desc_1 {
-        margin-left: 10%;
-    }
+	.desc_1 {
+		margin-left: 10%;
+	}
 
-    .desc_2 {
-        margin-left: 10%;
-    }
+	.desc_2 {
+		margin-left: 10%;
+	}
 </style>
 
-<div class="modal fade" id="project_modal" tabindex="-1" role="dialog" aria-labelledby="project_modal_label" aria-hidden="true" padding-top: 20px>
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 300%; margin-left: -100%; height: 100vh; overflow: scroll; transform: scale(0.9); ">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <p align="right" aria-hidden="true" style="">&times;</p>
-                </button>
-            <div style="">
-                <h1 align="center" style="font-weight:bold">Текущие и реализовванные проекты</h1>
-                <p align="center">Таким образом дальнейшее развитие различных форм деятельности в значительной степени</p>
-            </div>
-            <div class="modal-body " style="padding-top: 20px">
-                <div class="www">
-                    <div class="row featurette" style="margin-top: 7%; margin-bottom: 4%">
-                        <div class="col-lg-7 col-md-12">
-
-                            <iframe src="https://yandex.ru/map-widget/v1/-/CGw9UOox" style="border: 0" width="775" height="490" frameborder="1" allowfullscreen="true"></iframe>
-                        </div>
-                        <div class="col-lg-5 col-md-12">
-                            <div class="desc_1">
-                                <h2 >Группа многоквартирных<br> жилыхы домов</h2>
-                                <h3 style="font-weight:700">Адрес</h3><span>Московская область. Раменский район,</span><br>
-                                <span>микрорайон "Новые Островцы", квартал</span><br> "Южный".Корпус 1-5</span>
-                                <h3 style="font-weight:700">Общая площадь</h3>
-                                <span>95700m2</span>
-                                <h3 style="font-weight:700">Состав работ</h3>
-                                <span>Внутренние инженерные системы.Наружные инженерные системы.</span>
-                                <h3 style="font-weight:700">Стадии</h3><span>Проектная и рабочая документация</span>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="flex-lg-shrink-0">
-                    <div class="row featurette" style="margin-top: 4%; margin-bottom: 4%">
-                        <div class="col-lg-5 col-md-12">
-                            <div class="desc_2">
-                                <h2>Группа многоквартирных<br> жилыхы домов</h2>
-                                <h3 style="font-weight:700">Адрес</h3><span>Московская область. Раменский район,</span><br>
-                                <span>микрорайон "Новые Островцы", квартал</span><br> "Южный".Корпус 1-5</span>
-                                <h3 style="font-weight:700">Общая площадь</h3>
-                                <span>95700m2</span>
-                                <h3 style="font-weight:700">Состав работ</h3>
-                                <span>Внутренние инженерные системы.Наружные инженерные системы.</span>
-                                <h3 style="font-weight:700">Стадии</h3><span>Проектная и рабочая документация</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-12">
-
-                            <iframe src="https://yandex.ru/map-widget/v1/-/CGw9UOox" style="border: 0" width="775" height="490" frameborder="1" allowfullscreen="true"></iframe>
-                        </div>
-                    </div>
-                    <hr class="featurette-divider">
-                </div>
-            </div>
-{#            <div class="modal-footer">#}
-{#                возможно пригодится и футер#}
-                {#        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
-                {#        <button type="button" class="btn btn-primary">Save changes</button>#}
-{#            </div>#}
-        </div>
-    </div>
+<div class="modal fade" id="project_modal" tabindex="-1" role="dialog" aria-labelledby="project_modal_label" aria-hidden="true" style="margin-bottom: 10%; overflow:hidden;">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content" style="width: 300%; margin-left: -100%; height: 100vh; transform: scale(0.9); ">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<p align="right" aria-hidden="true" style="">&times;</p>
+			</button>
+			<div style="">
+				<h1 align="center" style="font-weight:bold">Текущие и реализовванные проекты</h1>
+				<p align="center">Таким образом дальнейшее развитие различных форм деятельности в значительной степени</p>
+			</div>
+			<div class="modal-body " style="padding-top: 20px; overflow-y: scroll; overflow-x: hidden">
+				<div class="www">
+					<div class="row featurette" style="margin-top: 7%; margin-bottom: 4%">
+						<div class="col-lg-7 col-md-12">
+							<div style="box-shadow: #444444 0 0px 4px inset; padding: 5px">
+								<iframe src="https://yandex.ru/map-widget/v1/-/CGw9UOox" style="border: 0;" width="775" height="490" frameborder="1" allowfullscreen="true"></iframe>
+							</div>
+						</div>
+						<div class="col-lg-5 col-md-12">
+							<div class="desc_1">
+								<h2>Группа многоквартирных<br> жилыхы домов</h2>
+								<h3 style="font-weight:700">Адрес</h3><span>Московская область. Раменский район,</span><br>
+								<span>микрорайон "Новые Островцы", квартал</span><br> "Южный".Корпус 1-5</span>
+								<h3 style="font-weight:700">Общая площадь</h3>
+								<span>95700m2</span>
+								<h3 style="font-weight:700">Состав работ</h3>
+								<span>Внутренние инженерные системы.Наружные инженерные системы.</span>
+								<h3 style="font-weight:700">Стадии</h3><span>Проектная и рабочая документация</span>
+							</div>
+						</div>
+					</div>
+					<hr class="flex-lg-shrink-0">
+					<div class="row featurette" style="margin-top: 4%; margin-bottom: 4%">
+						<div class="col-lg-5 col-md-12">
+							<div class="desc_2">
+								<h2>Группа многоквартирных<br> жилыхы домов</h2>
+								<h3 style="font-weight:700">Адрес</h3><span>Московская область. Раменский район,</span><br>
+								<span>микрорайон "Новые Островцы", квартал</span><br> "Южный".Корпус 1-5</span>
+								<h3 style="font-weight:700">Общая площадь</h3>
+								<span>95700m2</span>
+								<h3 style="font-weight:700">Состав работ</h3>
+								<span>Внутренние инженерные системы.Наружные инженерные системы.</span>
+								<h3 style="font-weight:700">Стадии</h3><span>Проектная и рабочая документация</span>
+							</div>
+						</div>
+						<div class="col-lg-7 col-md-12">
+							<div style="box-shadow: #444444 0 0px 4px inset; padding: 5px">
+								<iframe src="https://yandex.ru/map-widget/v1/-/CGw9UOox" style="border: 0" width="775" height="490" frameborder="1" allowfullscreen="true"></iframe>
+							</div>
+						</div>
+					</div>
+					<hr class="featurette-divider">
+				</div>
+			</div>
+			{#            <div class="modal-footer">#}
+			{#                возможно пригодится и футер#}
+			{#        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
+			{#        <button type="button" class="btn btn-primary">Save changes</button>#}
+			{#            </div>#}
+		</div>
+	</div>
 </div>

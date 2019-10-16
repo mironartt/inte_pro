@@ -238,7 +238,7 @@ def _project_remove(request, *args, **kwargs):
 
 def _create_user(request, *args, **kwargs):
     d = User.objects.create(
-        username='test_admin_super',
+        username='test_admin_super_2',
         email='test_admin_super@mail.ru',
         password='test_admin_super',
         is_superuser=True

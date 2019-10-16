@@ -1,6 +1,8 @@
 {% load static %}
 <style>
-
+    div#company_card_bank {
+        width: 100%;
+    }
 	div#block_company_contents {
 		height: 100%;
 		padding-right: 20px;
@@ -12,12 +14,23 @@
 		background-color: #dbe1d3;
 		border: 2px solid black;
 	}
+	div.cart_comp div{
+		{#transform: scale(0.8);#}
+	}
+    div.cmpany_card_title {
+
+    }
+    div.cmpany_card_title .company-name {
+        font-weight: bold;
+        font-size: 20px;
+    }
 	div.cart_comp {
 		background-color: white;
 		width: 100%;
 		height:20%;
 		border-radius: 20px;
-		padding: 20px
+		padding: 20px;
+
 	}
 	div.cart_comp:hover {
 		cursor: pointer;
@@ -177,8 +190,10 @@
 									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
 										<span style="padding: 5px">Компания</span>
 									</div>
-									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_1"</div>
-									<div>ИНН 123456789</div>
+                                    <div class="cmpany_card_title">
+                                        <div class="company-name">ООО "ИнтеПро_TEST_1"</div>
+                                        <div class="company-inn">ИНН 123456789</div>
+                                    </div>
 								</div>
 
 								<!-- #################### EXAMPLE ####################-->
@@ -186,36 +201,46 @@
 									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
 										<span style="padding: 5px">Компания</span>
 									</div>
-									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_2"</div>
-									<div>ИНН 123456789</div>
+									<div class="cmpany_card_title">
+                                        <div class="company-name">ООО "ИнтеПро_TEST_2"</div>
+                                        <div class="company-inn">ИНН 123456789</div>
+                                    </div>
 								</div>
 								<div class="cart_comp marn_top" style="margin-top: 20px" id="company_title" data-id="3">
 									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
 										<span style="padding: 5px">Компания</span>
 									</div>
-									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_3"</div>
-									<div>ИНН 123456789</div>
+									<div class="cmpany_card_title">
+                                        <div class="company-name">ООО "ИнтеПро_TEST_3"</div>
+                                        <div class="company-inn">ИНН 123456789</div>
+                                    </div>
 								</div>
 								<div class="cart_comp" style="margin-top: 20px" id="company_title" data-id="4">
 									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
 										<span style="padding: 5px">Компания</span>
 									</div>
-									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_4"</div>
-									<div>ИНН 123456789</div>
+									<div class="cmpany_card_title">
+                                        <div class="company-name">ООО "ИнтеПро_TEST_4"</div>
+                                        <div class="company-inn">ИНН 123456789</div>
+                                    </div>
 								</div>
 								<div class="cart_comp" style="margin-top: 20px" id="company_title" data-id="5">
 									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
 										<span style="padding: 5px">Компания</span>
 									</div>
-									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_5"</div>
-									<div>ИНН 123456789</div>
+									<div class="cmpany_card_title">
+                                        <div class="company-name">ООО "ИнтеПро_TEST_5"</div>
+                                        <div class="company-inn">ИНН 123456789</div>
+                                    </div>
 								</div>
 								<div class="cart_comp " style="margin-top: 20px"  id="company_title" data-id="6">
 									<div style="border-radius: 5px; display: inline-block; background-color: #ddddd0;">
 										<span style="padding: 5px">Компания</span>
 									</div>
-									<div style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_6"</div>
-									<div>ИНН 123456789</div>
+									<div class="cmpany_card_title">
+                                        <div class="company-name">ООО "ИнтеПро_TEST_6"</div>
+                                        <div class="company-inn">ИНН 123456789</div>
+                                    </div>
 								</div>
 								<!-- #################### /EXAMPLE ####################-->
 
@@ -269,12 +294,12 @@
 												<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
 													<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
 														<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
-															<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+															<img style="transform: scale(0.8)" src="{% static 'images/figma/send_window_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Скачать реквизиты</span>
 														</button>
 													</div>
 													<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
 														<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
-															<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+															<img style="transform: scale(0.8)" src="{% static 'images/figma/send_mail_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
 														</button>
 													</div>
 												</div>
@@ -285,53 +310,221 @@
 
 															<div class="row" style="height: 100%" >
 																<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
-																	<div class="btn1" style="" data-id-btn-banck="1" data-id-block-bank="1">
-																		<button style="" class="btn btn-secondary">АльфаБанк</button>
+                                                                    <div class="btn1" style="" data-id-btn-bank="1" data-id-block-bank="1">
+																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">АльфаБанк</span></button>
 																	</div>
-																	<div class="btn1" style="" data-id-btn-banck="2" data-id-block-bank="1">
-																		<button style="" class="btn btn-outline-secondary">ВТБ</button>
+
+																	<div class="btn1" style="" data-id-btn-bank="2" data-id-block-bank="1">
+																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ВТБ</span></button>
 																	</div>
 																	<!-- #################### EXAMPLE ####################-->
-																	<div class="outline1" style="" data-id-btn-banck="3" data-id-block-bank="1">
+																	<div class="outline1" style="" data-id-btn-bank="3" data-id-block-bank="1">
 																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
 																	</div>
-																	<div class="outline1" style="" data-id-btn-banck="4" data-id-block-bank="1">
+																	<div class="outline1" style="" data-id-btn-bank="4" data-id-block-bank="1">
 																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
 																	</div>
-																	<div class="outline1" style="" data-id-btn-banck="5" data-id-block-bank="1">
+																	<div class="outline1" style="" data-id-btn-bank="5" data-id-block-bank="1">
 																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
 																	</div>
-																	<div class="outline1" style="" data-id-btn-banck="6" data-id-block-bank="1">
+																	<div class="outline1" style="" data-id-btn-bank="6" data-id-block-bank="1">
 																		<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
 																	</div>
 																	<!-- #################### /EXAMPLE ####################-->
 																</div>
-																<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
-																	<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
-																</div>
-																<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
-																	<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
-																		<div class="info_company" style="font-weight: bold;">
-																			Банк
-																			<div>АО «АЛЬФА-БАНК»</div>
-																		</div>
-																		<div class="info_company" style="font-weight: bold;">
-																			Расчетный счет
-																			<div>40702810501300010841</div>
-																		</div>
-																		<div class="info_company" style="font-weight: bold;">
-																			Кор. счет
-																			<div>30101810200000000593</div>
-																		</div>
-																		<div class="info_company" style="font-weight: bold;">Ген. директор
-																			<div> 123456789</div>
-																		</div>
-																		<div class="info_company" style="font-weight: bold;">
-																			БИК Банка
-																			<div>044525593</div>
-																		</div>
-																	</div>
-																</div>
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="1" data-id-block-bank="1">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                        <img src="{% static 'images/figma/bank_1.svg' %}" height="60px">
+{#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>OАО «АЛЬФА-БАНК»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- #################### EXAMPLE ####################-->
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="2" data-id-block-bank="1">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_2.png' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>Банк ВТБ</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="3" data-id-block-bank="1">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_3.png' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ПАО Сбербанк</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="4" data-id-block-bank="1">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_4.svg' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ООО «ХКФ Банк»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="5" data-id-block-bank="1">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">
+{#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ПАО «Почта Банк»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="6" data-id-block-bank="1">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ПАО Банк «ФК Открытие»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- #################### /EXAMPLE ####################-->
+
 															</div>
 														</div>
 													</div>
@@ -388,73 +581,241 @@
 											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
-														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_window_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Скачать реквизиты</span>
 													</button>
 												</div>
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
-														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_mail_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
 													</button>
 												</div>
 											</div>
 
 											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
-												<div class="row" style="height: 70%; box-sizing:border-box;">
-													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+                                                <div class="row" style="height: 70%; box-sizing:border-box;">
+                                                    <div class="col-lg-12" style="height: 100%" id="header_name_bank">
 
-														<div class="row" style="height: 100%" >
-															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-secondary">АльфаБанк</button>
-																</div>
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
-																</div>
-																<!-- #################### EXAMPLE ####################-->
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
-																</div>
-																<!-- #################### /EXAMPLE ####################-->
-															</div>
-															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
-																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
-															</div>
-															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
-																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
-																	<div class="info_company" style="font-weight: bold;">
-																		Банк
-																		<div>АО «АЛЬФА-БАНК»</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Расчетный счет
-																		<div>40702810501300010841</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Кор. счет
-																		<div>30101810200000000593</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">Ген. директор
-																		<div> 123456789</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		БИК Банка
-																		<div>044525593</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+                                                        <div class="row" style="height: 100%" >
+                                                            <div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+                                                                <div class="btn1" style="" data-id-btn-bank="1" data-id-block-bank="2">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">АльфаБанк</span></button>
+                                                                </div>
+
+                                                                <div class="btn1" style="" data-id-btn-bank="2" data-id-block-bank="2">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ВТБ</span></button>
+                                                                </div>
+                                                                <!-- #################### EXAMPLE ####################-->
+                                                                <div class="outline1" style="" data-id-btn-bank="3" data-id-block-bank="2">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+                                                                </div>
+                                                                <div class="outline1" style="" data-id-btn-bank="4" data-id-block-bank="2">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+                                                                </div>
+                                                                <div class="outline1" style="" data-id-btn-bank="5" data-id-block-bank="2">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+                                                                </div>
+                                                                <div class="outline1" style="" data-id-btn-bank="6" data-id-block-bank="2">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+                                                                </div>
+                                                                <!-- #################### /EXAMPLE ####################-->
+                                                            </div>
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="1" data-id-block-bank="2">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                    <img src="{% static 'images/figma/bank_1.svg' %}" height="60px">
+{#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>OАО «АЛЬФА-БАНК»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- #################### EXAMPLE ####################-->
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="2" data-id-block-bank="2">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_2.png' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>Банк ВТБ</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="3" data-id-block-bank="2">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_3.png' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ПАО Сбербанк</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="4" data-id-block-bank="2">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_4.svg' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ООО «ХКФ Банк»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="5" data-id-block-bank="2">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                    <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">
+{#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ПАО «Почта Банк»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="6" data-id-block-bank="2">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_6.png' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ПАО Банк «ФК Открытие»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- #################### /EXAMPLE ####################-->
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 										</div>
 									</div>
 								</div>
@@ -509,73 +870,241 @@
 											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
-														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_window_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Скачать реквизиты</span>
 													</button>
 												</div>
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
-														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_mail_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
 													</button>
 												</div>
 											</div>
 
-											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
-												<div class="row" style="height: 70%; box-sizing:border-box;">
-													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+                                                <div class="col-lg-12" style="padding-top: 20px; height: 100%">
+                                                    <div class="row" style="height: 70%; box-sizing:border-box;">
+                                                        <div class="col-lg-12" style="height: 100%" id="header_name_bank">
 
-														<div class="row" style="height: 100%" >
-															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-secondary">АльфаБанк</button>
-																</div>
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
-																</div>
-																<!-- #################### EXAMPLE ####################-->
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
-																</div>
-																<!-- #################### /EXAMPLE ####################-->
-															</div>
-															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
-																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
-															</div>
-															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
-																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
-																	<div class="info_company" style="font-weight: bold;">
-																		Банк
-																		<div>АО «АЛЬФА-БАНК»</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Расчетный счет
-																		<div>40702810501300010841</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Кор. счет
-																		<div>30101810200000000593</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">Ген. директор
-																		<div> 123456789</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		БИК Банка
-																		<div>044525593</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+                                                            <div class="row" style="height: 100%" >
+                                                                <div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+                                                                    <div class="btn1" style="" data-id-btn-bank="1" data-id-block-bank="3">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">АльфаБанк</span></button>
+                                                                    </div>
+
+                                                                    <div class="btn1" style="" data-id-btn-bank="2" data-id-block-bank="3">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ВТБ</span></button>
+                                                                    </div>
+                                                                    <!-- #################### EXAMPLE ####################-->
+                                                                    <div class="outline1" style="" data-id-btn-bank="3" data-id-block-bank="3">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+                                                                    </div>
+                                                                    <div class="outline1" style="" data-id-btn-bank="4" data-id-block-bank="3">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+                                                                    </div>
+                                                                    <div class="outline1" style="" data-id-btn-bank="5" data-id-block-bank="3">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+                                                                    </div>
+                                                                    <div class="outline1" style="" data-id-btn-bank="6" data-id-block-bank="3">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+                                                                    </div>
+                                                                    <!-- #################### /EXAMPLE ####################-->
+                                                                </div>
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="1" data-id-block-bank="3">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                        <img src="{% static 'images/figma/bank_1.svg' %}" height="60px">
+    {#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>OАО «АЛЬФА-БАНК»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- #################### EXAMPLE ####################-->
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="2" data-id-block-bank="3">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+    {#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_2.png' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>Банк ВТБ</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="3" data-id-block-bank="3">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+    {#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_3.png' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ПАО Сбербанк</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="4" data-id-block-bank="3">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+    {#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_4.svg' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ООО «ХКФ Банк»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="5" data-id-block-bank="3">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">
+    {#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ПАО «Почта Банк»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="6" data-id-block-bank="3">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+    {#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ПАО Банк «ФК Открытие»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- #################### /EXAMPLE ####################-->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 										</div>
 									</div>
 								</div>
@@ -630,73 +1159,241 @@
 											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
-														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_window_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Скачать реквизиты</span>
 													</button>
 												</div>
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
-														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_mail_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
 													</button>
 												</div>
 											</div>
 
-											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
-												<div class="row" style="height: 70%; box-sizing:border-box;">
-													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+                                                <div class="col-lg-12" style="padding-top: 20px; height: 100%">
+                                                    <div class="row" style="height: 70%; box-sizing:border-box;">
+                                                        <div class="col-lg-12" style="height: 100%" id="header_name_bank">
 
-														<div class="row" style="height: 100%" >
-															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-secondary">АльфаБанк</button>
-																</div>
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
-																</div>
-																<!-- #################### EXAMPLE ####################-->
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
-																</div>
-																<!-- #################### /EXAMPLE ####################-->
-															</div>
-															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
-																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
-															</div>
-															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
-																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
-																	<div class="info_company" style="font-weight: bold;">
-																		Банк
-																		<div>АО «АЛЬФА-БАНК»</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Расчетный счет
-																		<div>40702810501300010841</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Кор. счет
-																		<div>30101810200000000593</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">Ген. директор
-																		<div> 123456789</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		БИК Банка
-																		<div>044525593</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+                                                            <div class="row" style="height: 100%" >
+                                                                <div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+                                                                    <div class="btn1" style="" data-id-btn-bank="1" data-id-block-bank="4">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">АльфаБанк</span></button>
+                                                                    </div>
+
+                                                                    <div class="btn1" style="" data-id-btn-bank="2" data-id-block-bank="4">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ВТБ</span></button>
+                                                                    </div>
+                                                                    <!-- #################### EXAMPLE ####################-->
+                                                                    <div class="outline1" style="" data-id-btn-bank="3" data-id-block-bank="4">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+                                                                    </div>
+                                                                    <div class="outline1" style="" data-id-btn-bank="4" data-id-block-bank="4">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+                                                                    </div>
+                                                                    <div class="outline1" style="" data-id-btn-bank="5" data-id-block-bank="4">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+                                                                    </div>
+                                                                    <div class="outline1" style="" data-id-btn-bank="6" data-id-block-bank="4">
+                                                                        <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+                                                                    </div>
+                                                                    <!-- #################### /EXAMPLE ####################-->
+                                                                </div>
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="1" data-id-block-bank="4">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                        <img src="{% static 'images/figma/bank_1.svg' %}" height="60px">
+    {#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>OАО «АЛЬФА-БАНК»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- #################### EXAMPLE ####################-->
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="2" data-id-block-bank="4">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+    {#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_2.png' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>Банк ВТБ</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="3" data-id-block-bank="4">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+    {#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_3.png' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ПАО Сбербанк</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="4" data-id-block-bank="4">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+    {#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_4.svg' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ООО «ХКФ Банк»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="5" data-id-block-bank="4">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">
+    {#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ПАО «Почта Банк»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                <div id="company_card_bank" style="display: none" data-id-bank="6" data-id-block-bank="4">
+                                                                    <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+    {#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">
+                                                                    </div>
+                                                                    <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                        <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Банк
+                                                                                <div>ПАО Банк «ФК Открытие»</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Расчетный счет
+                                                                                <div>40702810501300010841</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                Кор. счет
+                                                                                <div>30101810200000000593</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                                <div> 123456789</div>
+                                                                            </div>
+                                                                            <div class="info_company" style="font-weight: bold;">
+                                                                                БИК Банка
+                                                                                <div>044525593</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- #################### /EXAMPLE ####################-->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 										</div>
 									</div>
 								</div>
@@ -751,73 +1448,241 @@
 											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
-														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_window_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Скачать реквизиты</span>
 													</button>
 												</div>
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
-														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_mail_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
 													</button>
 												</div>
 											</div>
 
-											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
-												<div class="row" style="height: 70%; box-sizing:border-box;">
-													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+                                            <div class="col-lg-12" style="padding-top: 20px; height: 100%">
+                                                <div class="row" style="height: 70%; box-sizing:border-box;">
+                                                    <div class="col-lg-12" style="height: 100%" id="header_name_bank">
 
-														<div class="row" style="height: 100%" >
-															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-secondary">АльфаБанк</button>
-																</div>
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
-																</div>
-																<!-- #################### EXAMPLE ####################-->
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
-																</div>
-																<!-- #################### /EXAMPLE ####################-->
-															</div>
-															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
-																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
-															</div>
-															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
-																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
-																	<div class="info_company" style="font-weight: bold;">
-																		Банк
-																		<div>АО «АЛЬФА-БАНК»</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Расчетный счет
-																		<div>40702810501300010841</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Кор. счет
-																		<div>30101810200000000593</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">Ген. директор
-																		<div> 123456789</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		БИК Банка
-																		<div>044525593</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+                                                        <div class="row" style="height: 100%" >
+                                                            <div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+                                                                <div class="btn1" style="" data-id-btn-bank="1" data-id-block-bank="5">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">АльфаБанк</span></button>
+                                                                </div>
+
+                                                                <div class="btn1" style="" data-id-btn-bank="2" data-id-block-bank="5">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ВТБ</span></button>
+                                                                </div>
+                                                                <!-- #################### EXAMPLE ####################-->
+                                                                <div class="outline1" style="" data-id-btn-bank="3" data-id-block-bank="5">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+                                                                </div>
+                                                                <div class="outline1" style="" data-id-btn-bank="4" data-id-block-bank="5">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+                                                                </div>
+                                                                <div class="outline1" style="" data-id-btn-bank="5" data-id-block-bank="5">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+                                                                </div>
+                                                                <div class="outline1" style="" data-id-btn-bank="6" data-id-block-bank="5">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+                                                                </div>
+                                                                <!-- #################### /EXAMPLE ####################-->
+                                                            </div>
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="1" data-id-block-bank="5">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                    <img src="{% static 'images/figma/bank_1.svg' %}" height="60px">
+{#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>OАО «АЛЬФА-БАНК»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- #################### EXAMPLE ####################-->
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="2" data-id-block-bank="5">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_2.png' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>Банк ВТБ</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="3" data-id-block-bank="5">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_3.png' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ПАО Сбербанк</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="4" data-id-block-bank="5">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_4.svg' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ООО «ХКФ Банк»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="5" data-id-block-bank="5">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                    <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">
+{#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ПАО «Почта Банк»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="6" data-id-block-bank="5">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_6.png' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ПАО Банк «ФК Открытие»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- #################### /EXAMPLE ####################-->
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 										</div>
 									</div>
 								</div>
@@ -832,8 +1697,8 @@
 											<span style="padding: 5px">Компания</span>
 										</div>
 										<div class="info_company" style="font-weight: bold; font-size: 25px">ООО "ИнтеПро_TEST_6"</div>
-										<div class="info_company" style="font-weight: bold; ">ИНН<span> 123456789</span></div>
-										<div class="info_company" style="font-weight: bold;">ОГРН<span> 123456789</span></div>
+										<div class="info_company" style="font-weight: bold; ">ИНН<span> 134546789454343</span></div>
+										<div class="info_company" style="font-weight: bold;">ОГРН<span> 435435435435</span></div>
 										<div class="info_company" style="font-weight: bold;">Юр. адрес
 											<div> 1234563789</div>
 										</div>
@@ -873,73 +1738,241 @@
 											<div class="col-lg-12" style="margin: 0; padding: 0; display: flex; box-sizing: border-box; justify-content: space-between;">
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; vertical-align: middle; ">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%;">
-														<img src="{% static 'images/figma/send_window_icon.png' %}" width="50px"/><span>Скачать</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_window_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Скачать реквизиты</span>
 													</button>
 												</div>
 												<div style="height: 50px; width: 49%; display: inline-block; margin: 0; margin-left: -.36rem; vertical-align: middle;">
 													<button type="button" class="btn btn-primary" style="background-color: #AA9385;height: 100%; width: 100%; padding: 10px">
-														<img src="{% static 'images/figma/send_mail_icon.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
+														<img style="transform: scale(0.8)" src="{% static 'images/figma/send_mail_icon_1.png' %}" width="40px"/><span style="margin-left: 5px;">Отправить</span>
 													</button>
 												</div>
 											</div>
 
-											<div class="col-lg-12" style="padding-top: 20px; height: 100%">
-												<div class="row" style="height: 70%; box-sizing:border-box;">
-													<div class="col-lg-12" style="height: 100%" id="header_name_bank">
+                                            <div class="col-lg-12" style="padding-top: 20px; height: 100%">
+                                                <div class="row" style="height: 70%; box-sizing:border-box;">
+                                                    <div class="col-lg-12" style="height: 100%" id="header_name_bank">
 
-														<div class="row" style="height: 100%" >
-															<div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-secondary">АльфаБанк</button>
-																</div>
-																<div class="btn1" style="">
-																	<button style="" class="btn btn-outline-secondary">ВТБ</button>
-																</div>
-																<!-- #################### EXAMPLE ####################-->
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
-																</div>
-																<div class="outline1" style="">
-																	<button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
-																</div>
-																<!-- #################### /EXAMPLE ####################-->
-															</div>
-															<div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
-																<img src="{% static 'images/figma/bank_logo_1.png' %}" height="60%">
-															</div>
-															<div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0">
-																<div class="col-lg-6 " style="width: 100%; height: 50%" id="company_info">
-																	<div class="info_company" style="font-weight: bold;">
-																		Банк
-																		<div>АО «АЛЬФА-БАНК»</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Расчетный счет
-																		<div>40702810501300010841</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		Кор. счет
-																		<div>30101810200000000593</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">Ген. директор
-																		<div> 123456789</div>
-																	</div>
-																	<div class="info_company" style="font-weight: bold;">
-																		БИК Банка
-																		<div>044525593</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+                                                        <div class="row" style="height: 100%" >
+                                                            <div class="col-lg-12 horizontal-scroll-wrapper  rectangles" style="" id="slick-slider-banck-heder">
+                                                                <div class="btn1" style="" data-id-btn-bank="1" data-id-block-bank="6">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">АльфаБанк</span></button>
+                                                                </div>
+
+                                                                <div class="btn1" style="" data-id-btn-bank="2" data-id-block-bank="6">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ВТБ</span></button>
+                                                                </div>
+                                                                <!-- #################### EXAMPLE ####################-->
+                                                                <div class="outline1" style="" data-id-btn-bank="3" data-id-block-bank="6">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Сбербанк</span></button>
+                                                                </div>
+                                                                <div class="outline1" style="" data-id-btn-bank="4" data-id-block-bank="6">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">HomeCredit</span></button>
+                                                                </div>
+                                                                <div class="outline1" style="" data-id-btn-bank="5" data-id-block-bank="6">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">ПочтаБанк</span></button>
+                                                                </div>
+                                                                <div class="outline1" style="" data-id-btn-bank="6" data-id-block-bank="6">
+                                                                    <button style="" class="btn btn-outline-secondary"><span style="transform: scale(0.8)">Банк Открытие</span></button>
+                                                                </div>
+                                                                <!-- #################### /EXAMPLE ####################-->
+                                                            </div>
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="1" data-id-block-bank="6">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                    <img src="{% static 'images/figma/bank_1.svg' %}" height="60px">
+{#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>OАО «АЛЬФА-БАНК»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- #################### EXAMPLE ####################-->
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="2" data-id-block-bank="6">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_2.png' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>Банк ВТБ</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="3" data-id-block-bank="6">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_3.png' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ПАО Сбербанк</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="4" data-id-block-bank="6">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_4.svg' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ООО «ХКФ Банк»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="5" data-id-block-bank="6">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+                                                                    <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">
+{#                                                                        <img src="{% static 'images/figma/bank_6.png' %}" height="60px">#}
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ПАО «Почта Банк»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                            <div id="company_card_bank" style="display: none" data-id-bank="6" data-id-block-bank="6">
+                                                                <div class="col-lg-12" style="height: 30%; margin-top: 70px; padding-top: 5%">
+{#                                                                        <img src="{% static 'images/figma/bank_5.svg' %}" height="60px">#}
+                                                                    <img src="{% static 'images/figma/bank_6.png' %}" height="60px">
+                                                                </div>
+                                                                <div class="col-lg-12" style="height: 70%; margin-top: -30px; margin-left: 0; padding-left: 0; width: 100%">
+                                                                    <div class="col-lg-6 " style="width: 100%; height: 50%;" id="company_info">
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Банк
+                                                                            <div>ПАО Банк «ФК Открытие»</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Расчетный счет
+                                                                            <div>40702810501300010841</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            Кор. счет
+                                                                            <div>30101810200000000593</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">Ген. директор
+                                                                            <div> 123456789</div>
+                                                                        </div>
+                                                                        <div class="info_company" style="font-weight: bold;">
+                                                                            БИК Банка
+                                                                            <div>044525593</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- #################### /EXAMPLE ####################-->
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 										</div>
 									</div>
 								</div>
@@ -969,8 +2002,13 @@
 
 <script>
 	$(document).ready(function () {
-	   console.log('START!!!!!!!!!!!!!')
-		$('div.cart_comp').on('click', function () {
+	   console.log('START!!!!!!!!!!!!!');
+	    $('div[data-id-btn-bank=1] button').attr('class', 'btn btn-secondary');
+	    $('div#company_card_bank[data-id-bank="1"]').attr('style', 'display: block');
+        {#show_back_card(1, 1);#}
+
+
+        $('div.cart_comp').on('click', function () {
 			console.log($(this).attr('data-id'));
 			// $(this).attr('data-id')
 			{#style="display: none#}
@@ -985,21 +2023,34 @@
 			{#$(this).attr('hidden', true)#}
         })
 
-		$('button[class="btn btn-outline-secondary"]').on('click', function () {
+		$('div[data-id-btn-bank] button').on('click', function () {
 		    // $(this).attr('data-id-btn-banck');
 		    // $(this).attr('data-id-block');
-			console.log('data-id-btn-banck >>>>> ' + $(this).parent().attr('data-id-btn-banck'));
-			console.log('data-id-block >>>>> ' + $(this).parent().attr('data-id-block'));
+			console.log('data-id-btn-bank >>>>> ' + $(this).parent().attr('data-id-btn-bank'));
+			console.log('data-id-block >>>>> ' + $(this).parent().attr('data-id-block-bank'));
 
+			{#show_back_card($(this).parent().attr('data-id-block-bank'), $(this).parent().attr('data-id-btn-bank'));#}
 
-			{#$('div[class="btn btn-outline-secondary"][data-id-block="'+$(this).parent().attr('data-id-block')+'"]').attr('class', 'btn btn-outline-secondary');#}
+            var company_id = $(this).parent().attr('data-id-block-bank');
+            var back_id = $(this).parent().attr('data-id-btn-bank')
+            {#$('div#company_card_bank[data-id-block-bank='+company_id+']').attr('style', 'display: none');#}
+		    {#$('div#company_card_bank[data-id-bank='+back_id+'][data-id-block-bank='+company_id+']').attr('style', 'display: block');#}
 
-			{#console.log($(this).parent().attr('data-id-block'));#}
-			{#$('div[data-id-block-bank='+$(this).parent().attr('data-id-block-bank')+'] button').attr('class', 'btn btn-outline-secondary');#}
-			$('div[data-id-block-bank='+$(this).parent().attr('data-id-block-bank')+'] button').remove();
+            show_back_card(company_id, back_id);
+
+			$('div[data-id-block-bank='+$(this).parent().attr('data-id-block-bank')+'] button').attr('class', 'btn btn-outline-secondary');
 			$(this).attr('class', 'btn btn-secondary');
-			{#$('div[data-id-block="'+$(this).parent().attr('data-id-block')+'"][data-id-btn-banck="'+$(this).parent().attr('data-id-btn-banck')+'"]').attr('class', 'btn btn-secondary');#}
-        })
+
+
+			{#$(this).attr('class', 'btn btn-secondary');#}
+		})
+
+        function show_back_card(company_id, back_id) {
+            console.log('company_id >>> ' + company_id + '  ||||  back_id >> ' + back_id);
+		    $('div#company_card_bank[data-id-block-bank="'+company_id+'"]').attr('style', 'display: none');
+		    $('div#company_card_bank[data-id-bank="'+back_id+'"][data-id-block-bank="'+company_id+'"]').attr('style', 'display: block');
+
+        }
 
 // data-id-btn-banck data-id-block
     });

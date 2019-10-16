@@ -11,13 +11,21 @@
                     <div class="bg-block">
 {#                        <div class="ver-hor-center" data-toggle="modal" data-target="#project_modal">#}
                         <div class="ver-hor-center" id="1" data-toggle="modal" data-target="#project_modal">
-                            <div class="row " style="text-align: center; padding-top: 70px;">
+                            <div class="row " style="text-align: center; padding-top: 70px;" id="row_base">
                                 <div class="col-lg-12 bg-cont-bl1">
-                                    <div >
+                                    <div id="image_icon">
                                         <img src="{% static 'images/figma/projects.png' %}" class="icon_1">
                                     </div>
                                     <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" id="1">
-                                        <h2>Проекты</h2>
+                                        <h2 style="font-weight: bold">Проекты</h2>
+                                        <div id="tile_description" style="display: none">
+                                            <p align="center" style="font-size: medium; transform: scale(0.8)" id="tile_description">
+                                                Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений.
+                                                Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений
+                                                Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений
+                                            </p>
+                                            <p><a href="#" style="color: #A99284">Подробнее</a></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -30,13 +38,13 @@
                         <!-- Content -->
 {#                         <div class="ver-hor-center" data-toggle="modal" data-target="#window_modal_storage">#}
                          <div class="ver-hor-center" id="2"  data-toggle="modal" data-target="#window_modal_storage">
-                            <div class="row " style="text-align: center; padding-top: 70px;">
+                            <div class="row " style="text-align: center; padding-top: 70px;" id="row_base">
                                 <div class="col-lg-12 bg-cont-bl4">
-                                    <div>
+                                    <div id="image_icon">
                                         <img src="{% static 'images/figma/cloud.png' %}" class="icon_1">
                                     </div>
                                     <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" id="2"  >
-                                        <h2>Облачное хранилище</h2>
+                                        <h2 style="font-weight: bold">Облачное хранилище</h2>
                                     </div>
                                 </div>
                             </div>
@@ -53,41 +61,48 @@
 
                         <!-- Content -->
                          <div class="ver-hor-center" id="3"  data-toggle="modal" data-target="#contacts_modal">
-                            <div class="row " style="text-align: center; padding-top: 70px;">
+                            <div class="row " style="text-align: center; padding-top: 70px;" id="row_base">
                                 <div class="col-lg-12 bg-cont-bl3">
-                                    <div style=" display: inline-block">
+                                    <div id="image_icon">
                                         <img src="{% static 'images/figma/mail.png' %}" class="icon_1">
                                     </div>
                                     <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" id="3"  >
-                                        <h2>Контакты</h2>
+                                        <h2 style="font-weight: bold">Контакты</h2>
+                                        <div id="tile_description" style="display: none">
+                                            <p align="center" style="font-size: medium; transform: scale(0.8)" id="tile_description">
+                                                Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений.
+                                                Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений
+                                                Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений
+                                            </p>
+                                            <p><a href="#" style="color: #A99284">Подробнее</a></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 block-bg4" id="tile_card" data-id="4">
+                <div class="col-lg-6 block-bg4" id="tile_card" data-id="4" style="">
                     <div class="bg-block">
                          <div class="ver-hor-center" id="4"  data-toggle="modal" data-target="#requisites_modal">
-                            <div class="row " style="text-align: center; padding-top: 70px;">
+                            <div class="row " style="text-align: center; padding-top: 70px;" id="row_base">
                                 <div class="col-lg-12 bg-cont-bl4">
-                                    <div>
+                                    <div style="" id="image_icon">
                                         <img src="{% static 'images/figma/reck.png' %}" class="icon_1">
                                     </div>
-                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" id="4">
-                                        <h2>Реквизиты</h2>
+                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block txt-all" id="4" style="">
+                                        <h2 style="font-weight: bold">Реквизиты</h2>
 {#                                            <div style="width: 150%; margin-left: -25%; color: white;">#}
 {#                                                <h3 align="center">Проектная документация</h3>#}
-{#                                                <p align="center">Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений</p>#}
-{#                                            </div>#}
+                                        <div id="tile_description" style="display: none">
+                                            <p align="center" style="font-size: medium; transform: scale(0.8)" id="tile_description">
+                                                Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений.
+                                                Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений
+                                                Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений
+                                            </p>
+                                            <p><a href="#" style="color: #A99284">Подробнее</a></p>
+                                        </div>
                                     </div>
-{#                                    <div class="d-none d-md-inline-block d-sm-inline-block d-lg-block" >#}
-{#                                        <div style="width: 150%; margin-left: -25%; color: white; position: absolute">#}
-{#                                            <h3 align="center">Проектная документация</h3>#}
-{#                                            <p align="center">Таким образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений</p>#}
-{#                                        </div>#}
-{##}
-{#                                    </div>#}
                                 </div>
                             </div>
                         </div>
@@ -102,9 +117,21 @@
 	$(document).ready(function () {
 
 	    $('div#tile_card').hover(function(){
-			$('div.txt-all[id='+$(this).attr('data-id')+']').attr('style', '-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);')
+			$('div.txt-all[id='+$(this).attr('data-id')+']').attr('style', '-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);');
+			$(this).find('#row_base').attr('style', 'text-align: center;');
+			$(this).find('#row_base').attr('style', 'text-align: center;');
+			$(this).find('div#tile_description').attr('style', 'display: block;');
+			$(this).find('div#image_icon').attr('style', 'margin-bottom: 20px;');
+            $(this).attr('style', 'z-index: 999');
+
         },function(){
-			$('div.txt-all[id='+$(this).attr('data-id')+']').attr('style', '-webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1);')
+			$('div.txt-all[id='+$(this).attr('data-id')+']').attr('style', '-webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1);');
+            $(this).find('#row_base').attr('style', 'text-align: center; padding-top: 70px;');
+            $(this).find('div#tile_description').attr('style', 'display: none;');
+            $(this).find('div#image_icon').attr('style', '');
+            $(this).attr('style', '');
+
+
         });
 
     })

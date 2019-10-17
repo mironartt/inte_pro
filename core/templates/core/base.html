@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="{% static 'css/home_p.css' %}">
     <link rel="stylesheet" href="{% static 'css/icofont/icofont.min.css' %}">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <link href='{% static 'css/font/Geometria_light.otf' %}' rel='stylesheet' type='text/css'>
 
 	<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
@@ -17,128 +18,160 @@
 	<script src="{% static 'js/popper.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-    <style>
-            .bg-block {
-        width: 50vw;
-        height: 50vh;
-        vertical-align: middle;
-        margin: 0;
-        padding: 0;
-        margin-left: -.36rem;
-
-    }
-    .block-bg1 {
-        background: url({% static 'images/figma/bg1.png' %}) no-repeat;
-        background-size: cover;
-        padding: 0;
-        opacity:1;
-        width: 50vw;
-        height: 50vh;
-        margin: 0;
-    }
-    .block-bg1:hover {
-        opacity:0.8;
-    }
-
-
-    .block-bg2 {
-        background: url({% static 'images/figma/bg2.png' %}) no-repeat;
-        background-size: cover;
-        padding: 0;
-        opacity:1;
-        width: 50vw;
-        height: 50vh;
-        margin: 0;
-    }
-    .block-bg2:hover {
-        opacity:0.8;
-    }
-
-    div#tile_description:hover {
-
-    }
-
-    .block-bg3 {
-        background: url({% static 'images/figma/bg3.png' %}) no-repeat;
-        background-size: cover;
-        padding: 0;
-        opacity:1;
-        width: 50vw;
-        height: 50vh;
-        margin: 0;
-        /*padding: 0;*/
-    }
-    .block-bg3:hover {
-        opacity:0.8;
-    }
-
-
-    .block-bg4 {
-        background: url({% static 'images/figma/bg4.png' %}) no-repeat;
-        background-size: cover;
-        padding: 0;
-        opacity:1;
-        width: 50vw;
-        height: 50vh;
-        margin: 0;
-    }
-    .block-bg4:hover {
-        opacity:0.8;
-    }
-
-    /* end region */
-    .ver-hor-center:hover {
-        cursor: pointer;
-    }
-    .ver-hor-center {
-        width: 80%;
-        height: 40%;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-left: -40%;
-        margin-top: -15%;
-    }
-    .nav_1{
-        position: absolute;
-        z-index: 8;
-        width: 100%;
-    }
-    .nav_icon_1 {
-    width: 50%;
-    padding: 2%;
-
-
-    }
-    .text-muted{
-        position: absolute;
-        bottom: 2%;
-        width: 31%;
-        margin-left: 1%;
-    }
-    .text-muted h6 {
-        margin-left: 3%;
-    }
-    .txt-all{
-        color: white;
-        /*font-size: 65px;*/
-    }
-    .txt-all:hover {
-        {#-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);#}
-    }
-
-html, body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-
-    </style>
 	{% block extra_style %}
-	{% endblock %}
+        <style>
+            @font-face {
+                font-family: Geometria_light; /* Гарнитура шрифта */
+                src: url({% static 'css/font/Geometria_light.otf' %}); /* Путь к файлу со шрифтом */
+           }
+            @font-face {
+                font-family: Geometria_medium; /* Гарнитура шрифта */
+                src: url({% static 'css/font/Geometria_medium.otf' %}); /* Путь к файлу со шрифтом */
+           }
+
+            .bg-block {
+                width: 50vw;
+                height: 50vh;
+                vertical-align: middle;
+                margin: 0;
+                padding: 0;
+                margin-left: -.36rem;
+
+            }
+            .bg-block :hover {
+                cursor: pointer;
+            }
+            .block-bg1 {
+                background: url({% static 'images/figma/bg1.png' %}) no-repeat;
+                background-size: cover;
+                padding: 0;
+                opacity:1;
+                width: 50vw;
+                height: 50vh;
+                margin: 0;
+            }
+            .block-bg1:hover {
+                opacity:0.8;
+                cursor: pointer;
+            }
+
+
+            .block-bg2 {
+                background: url({% static 'images/figma/bg2.png' %}) no-repeat;
+                background-size: cover;
+                padding: 0;
+                opacity:1;
+                width: 50vw;
+                height: 50vh;
+                margin: 0;
+            }
+            .block-bg2:hover {
+                opacity:0.8;
+                cursor: pointer;
+            }
+
+            div#tile_description:hover {
+
+            }
+
+            .block-bg3 {
+                background: url({% static 'images/figma/bg3.png' %}) no-repeat;
+                background-size: cover;
+                padding: 0;
+                opacity:1;
+                width: 50vw;
+                height: 50vh;
+                margin: 0;
+                /*padding: 0;*/
+            }
+            .block-bg3:hover {
+                opacity:0.8;
+                cursor: pointer;
+            }
+
+
+            .block-bg4 {
+                background: url({% static 'images/figma/bg4.png' %}) no-repeat;
+                background-size: cover;
+                padding: 0;
+                opacity:1;
+                width: 50vw;
+                height: 50vh;
+                margin: 0;
+            }
+            .block-bg4:hover {
+                opacity:0.8;
+                cursor: pointer;
+            }
+
+            /* end region */
+            .ver-hor-center:hover {
+                cursor: pointer;
+            }
+            .ver-hor-center {
+                width: 80%;
+                height: 40%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -40%;
+                margin-top: -15%;
+            }
+            .nav_1{
+                position: absolute;
+                z-index: 8;
+                width: 100%;
+            }
+            .nav_icon_1 {
+                width: 50%;
+                padding: 2%;
+
+
+            }
+            .text-muted{
+                position: absolute;
+                bottom: 2%;
+                width: 31%;
+                margin-left: 1%;
+            }
+            .text-muted h6 {
+                margin-left: 3%;
+            }
+            .txt-all h2{
+                font-family: Geometria_medium;
+            }
+            .txt-all {
+                color: white;
+
+                /*font-size: 65px;*/
+            }
+            .txt-all:hover {
+            {#-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);#}
+            }
+
+            html, body {
+                height: 100vh;
+                width: 100vw;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .nav_icon_1 a {
+                text-decoration: none;
+                font-family: Geometria_light;
+            }
+            #tile_description a {
+                text-decoration: none;
+            }
+            #image_icon {
+                padding-bottom: 38px;
+            }
+            #tile_description {
+                font-family: Geometria_light;
+            }
+        </style>
+    {% endblock %}
 
 
 	<link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
@@ -157,7 +190,8 @@ html, body {
 			<div class="nav_icon_1">
 				<div align="right">
 {#					<img src="{% static 'images/figma/telefon.png' %}" class="post-item">#}
-					<h2><a href="tel:+7(495)188-98-32" style="color: white; font-size: 30px">+7(495)188-98-32</a></h2>
+					<h2><img src="{% static 'images/figma/phone_header.png' %}" width="20px" style="margin-right: 17px"><a style="color: white; font-size: 30px">+7(495)188-98-32</a></h2>
+{#					<h2><a href="tel:+7(495)188-98-32" style="color: white; font-size: 30px">+7(495)188-98-32</a></h2>#}
 					<h4><a href="mailto:vlad@htmlbook.ru" style="color:#A99284;">mail@inte.pro</a></h4>
 				</div>
 			</div>
@@ -171,7 +205,7 @@ html, body {
 {#		</div>#}
 	{% endblock %}
 	<footer class="text-muted">
-		<h6><span>® INTE.PRO 2019</span>&nbsp;&nbsp;&nbsp;<span>Лицензия</span>&nbsp;&nbsp;&nbsp;<span>Политика конфедиdциальности</span></h6>
+		<h6 style="color: white; opacity: 0.56"><span>® INTE.PRO 2019</span>&nbsp;&nbsp;&nbsp;<span>Лицензия</span>&nbsp;&nbsp;&nbsp;<span>Политика конфедициальности</span></h6>
 	</footer>
 
 

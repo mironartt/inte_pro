@@ -5,6 +5,7 @@ from django.views import generic
 from django.shortcuts import render, redirect, render_to_response, get_object_or_404
 from core.models.globals import Tile, Project
 from ..forms.site_form import TileForm, TileEditForm, ProjectCreateForm, CKEditorForm
+from core.views.index import check_block
 
 
 def get_page_form(type, req=None):
@@ -27,6 +28,10 @@ def get_page_form(type, req=None):
 class IndexLoginAdminView(generic.View):
 
     def dispatch(self, request, *args, **kwargs):
+
+        if check_block():
+            return redirect('site_block')
+
         if request.user.is_authenticated:
             return redirect('index_admin')
         return super().dispatch(request, *args, **kwargs)
@@ -41,7 +46,8 @@ class IndexLoginAdminView(generic.View):
         if user:
             auth.login(request, user=user.first())
             context['error'] = False
-            return redirect('index_admin')
+            # return redirect('index_admin')
+            return redirect('index')
 
         print('1111111111request.user.is_authenticated >>>>>> 222. ' + str(request.user.is_authenticated))
         return render(request, 'csm/authoricated.html', context)
@@ -50,6 +56,10 @@ class IndexLoginAdminView(generic.View):
 class IndexAdminView(generic.View):
 
     def dispatch(self, request, *args, **kwargs):
+
+        if check_block():
+            return redirect('site_block')
+
         print('request.user.is_authenticated >>>>>>. ' + str(request.user.is_authenticated))
         if not request.user.is_authenticated:
             return redirect('index_admin_login')
@@ -69,6 +79,10 @@ class IndexAdminView(generic.View):
 class TileEditView(generic.View):
 
     def dispatch(self, request, *args, **kwargs):
+
+        if check_block():
+            return redirect('site_block')
+
         print('request.user.is_authenticated >>>>>>. ' + str(request.user.is_authenticated))
         if not request.user.is_authenticated:
             return redirect('index_admin_login')
@@ -113,6 +127,10 @@ class TileEditView(generic.View):
 class TileCreateView(generic.View):
 
     def dispatch(self, request, *args, **kwargs):
+
+        if check_block():
+            return redirect('site_block')
+
         print('request.user.is_authenticated >>>>>>. ' + str(request.user.is_authenticated))
         if not request.user.is_authenticated:
             return redirect('index_admin_login')
@@ -142,6 +160,10 @@ class TileCreateView(generic.View):
 class TileOffView(generic.View):
 
     def dispatch(self, request, *args, **kwargs):
+
+        if check_block():
+            return redirect('site_block')
+
         print('request.user.is_authenticated >>>>>>. ' + str(request.user.is_authenticated))
         if not request.user.is_authenticated:
             return redirect('index_admin_login')
@@ -164,6 +186,10 @@ def _logout(request):
 
 
 def _project_create(request, *args, **kwargs):
+
+    if check_block():
+        return redirect('site_block')
+
     if not request.user.is_authenticated:
         return redirect('index_admin_login')
     print('_project_create >>>> kwargs >>> ' + str(kwargs))
@@ -195,9 +221,11 @@ def _project_create(request, *args, **kwargs):
                 return render(request, 'csm/tile_edit.html', {'tile':tile, 'form_card':proj_form, 'projects':Project.objects.filter(tile_id=tile.id), 'create_error':True,})
 
 
-
-
 def _project_edit(request, *args, **kwargs):
+
+    if check_block():
+        return redirect('site_block')
+
     if not request.user.is_authenticated:
         return redirect('index_admin_login')
 
@@ -224,6 +252,10 @@ def _project_edit(request, *args, **kwargs):
 
 
 def _project_remove(request, *args, **kwargs):
+
+    if check_block():
+        return redirect('site_block')
+
     if not request.user.is_authenticated:
         return redirect('index_admin_login')
 
@@ -235,8 +267,11 @@ def _project_remove(request, *args, **kwargs):
     return redirect('admin_tile_edit', pk=tile.id)
 
 
-
 def _create_user(request, *args, **kwargs):
+
+    if check_block():
+        return redirect('site_block')
+
     d = User.objects.create(
         username='test_admin_super_2',
         email='test_admin_super@mail.ru',
